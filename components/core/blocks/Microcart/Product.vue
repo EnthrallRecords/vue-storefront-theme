@@ -103,7 +103,7 @@ export default {
 
 <style lang="scss" scoped>
   .image {
-    mix-blend-mode: multiply;
+    mix-blend-mode: screen;
     vertical-align: top;
     width: 150px;
     @media (max-width: 767px) {

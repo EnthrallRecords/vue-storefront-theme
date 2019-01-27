@@ -123,7 +123,7 @@ export default {
 }
 img {
   opacity: 0.9;
-  mix-blend-mode: multiply;
+  mix-blend-mode: screen;
   vertical-align: top;
   &:hover {
     opacity: 1;

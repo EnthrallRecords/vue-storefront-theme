@@ -212,7 +212,7 @@ export default {
 $bg-secondary: color(secondary, $colors-background);
 $color-gainsboro: color(gainsboro);
 $color-matterhorn: color(matterhorn);
-$color-mine-shaft: color(mine-shaft);
+$color-heather: color(heather);
 
 .sidebar-menu {
   height: 100vh;
@@ -253,7 +253,7 @@ $color-mine-shaft: color(mine-shaft);
       }
     }
     a {
-      color: $color-mine-shaft;
+      color: $color-heather;
     }
   }
 
@@ -263,8 +263,8 @@ $color-mine-shaft: color(mine-shaft);
   }
 
   button {
-    color: $color-mine-shaft;a {
-      color: $color-mine-shaft;
+    color: $color-heather;a {
+      color: $color-heather;
     }
   }
 

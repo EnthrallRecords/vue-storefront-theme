@@ -4,7 +4,7 @@
       {{ $t('Filter') }}
     </h4>
     <button
-      class="visible-xs no-outline brdr-none py15 px40 bg-cl-mine-shaft :bg-cl-th-secondary ripple h5 cl-white sans-serif"
+      class="visible-xs no-outline brdr-none py15 px40 bg-cl-heather :bg-cl-th-secondary ripple h5 cl-white sans-serif"
       @click="resetAllFilters"
       :class="{'button-disabled': Object.keys(activeFilters).length === 0}"
       :disabled="Object.keys(activeFilters).length === 0"

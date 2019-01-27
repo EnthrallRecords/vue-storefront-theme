@@ -5,7 +5,7 @@
         {{ link.name | htmlDecode }}
       </router-link> /
     </span>
-    <span class="cl-mine-shaft">
+    <span class="cl-heather">
       {{ activeRoute | htmlDecode }}
     </span>
   </div>

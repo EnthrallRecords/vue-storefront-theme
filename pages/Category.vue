@@ -159,7 +159,7 @@ export default {
 
     .mobile-filters {
       position: fixed;
-      background-color: #F2F2F2;
+      background-color: #4f4f4f;
       z-index: 5;
       padding: 0 40px;
       left: 0;

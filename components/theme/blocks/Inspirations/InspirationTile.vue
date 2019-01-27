@@ -33,6 +33,6 @@ export default {
   }
 
   .product-thumbnail {
-    mix-blend-mode: multiply;
+    mix-blend-mode: screen;
   }
 </style>

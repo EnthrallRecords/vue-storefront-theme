@@ -10,13 +10,13 @@
               {{ product.errors | formatProductMessages }}
             </div>
             <div class="h5 cl-tertiary pt5">{{ product.sku }}</div>
-            <div class="h6 cl-bg-tertiary pt5 options" v-if="product.totals && product.totals.options">
+            <div class="h6 cl-tertiary pt5 options" v-if="product.totals && product.totals.options">
               <div v-for="opt in product.totals.options" :key="opt.label">
                 <span class="opn">{{ opt.label }}: </span>
                 <span class="opv" v-html="opt.value" />
               </div>
             </div>
-            <div class="h6 cl-bg-tertiary pt5 options" v-else-if="product.options">
+            <div class="h6 cl-tertiary pt5 options" v-else-if="product.options">
               <div v-for="opt in product.options" :key="opt.label">
                 <span class="opn">{{ opt.label }}: </span>
                 <span class="opv" v-html="opt.value" />
@@ -64,6 +64,6 @@ export default {
   text-decoration: line-through;
 }
 .blend {
-  mix-blend-mode: multiply;
+  mix-blend-mode: screen;
 }
 </style>

@@ -48,7 +48,7 @@
       </div>
       <div v-show="OnlineOnly" v-if="products.length >= 18" class="buttons-set align-center py35 mt20 px40">
         <button @click="seeMore" v-if="readMore"
-                class="no-outline brdr-none py15 px20 bg-cl-mine-shaft :bg-cl-th-secondary cl-white fs-medium-small"
+                class="no-outline brdr-none py15 px20 bg-cl-heather :bg-cl-th-secondary cl-white fs-medium-small"
                 type="button">
           {{ $t('Load more') }}
         </button>

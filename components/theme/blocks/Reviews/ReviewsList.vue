@@ -13,7 +13,7 @@
         <i class="material-icons">chevron_left</i>
       </a>
       <span class="mx10 pagination-page" v-for="pageNumber in pageList" :key="pageNumber">
-        <span class="fs-medium block py15 px20 bg-cl-mine-shaft cl-white" v-if="pageNumber === currentPage" >
+        <span class="fs-medium block py15 px20 bg-cl-heather cl-white" v-if="pageNumber === currentPage" >
           {{ pageNumber }}
         </span>
         <a href="#" class="fs-medium block py15 px20 bg-cl-secondary pointer" v-else @click.prevent="changePage(pageNumber)" >
@@ -89,7 +89,7 @@ export default {
 <style lang="scss" scoped>
 @import '~theme/css/variables/colors';
 @import '~theme/css/helpers/functions/color';
-$mine-shaft: color(mine-shaft);
+$heather: color(heather);
 $white: color(white);
 
 .inactive {
@@ -103,7 +103,7 @@ $white: color(white);
 .pagination-page {
   a {
     &:hover {
-      background-color: $mine-shaft;
+      background-color: $heather;
       color: $white;
     }
   }

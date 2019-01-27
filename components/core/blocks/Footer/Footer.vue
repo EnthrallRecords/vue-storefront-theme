@@ -7,99 +7,10 @@
     >
       <div class="container">
         <div class="row m0 center-xs between-md">
-          <div
-            class="row m0 col-lg-7 col-md-8 col-xs-12 start-md between-md between-xs no-mobile"
-          >
-            <div class="start-md">
-              <h3 class="cl-accent weight-400">
-                {{ $t('Departments') }}
-              </h3>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/c/women-20')" exact>
-                  {{ $t('Women fashion') }}
-                </router-link>
-              </div>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/c/men-11')" exact>
-                  {{ $t("Men's fashion") }}
-                </router-link>
-              </div>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/')" exact>
-                  {{ $t('Kidswear') }}
-                </router-link>
-              </div>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/')" exact>
-                  {{ $t('Home') }}
-                </router-link>
-              </div>
-            </div>
-            <div class="start-md">
-              <h3 class="cl-accent weight-400">
-                {{ $t('Orders') }}
-              </h3>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/order-tracking')" exact>
-                  {{ $t('Track my order') }}
-                </router-link>
-              </div>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/my-account')" exact>
-                  {{ $t('My account') }}
-                </router-link>
-              </div>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/delivery')" exact>
-                  {{ $t('Delivery') }}
-                </router-link>
-              </div>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/returns')" exact>
-                  {{ $t('Return policy') }}
-                </router-link>
-              </div>
-            </div>
-            <div class="start-md">
-              <h3 class="cl-accent weight-400">
-                {{ $t('Help') }}
-              </h3>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/customer-service')" exact>
-                  {{ $t('Customer service') }}
-                </router-link>
-              </div>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/size-guide')" exact>
-                  {{ $t('Size guide') }}
-                </router-link>
-              </div>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/contact')" exact>
-                  {{ $t('Contact us') }}
-                </router-link>
-              </div>
-            </div>
-            <div class="start-md">
-              <h3 class="cl-accent weight-400">
-                {{ $t('About us') }}
-              </h3>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/i/about-us')" exact>
-                  {{ $t('About us (Magento CMS)') }}
-                </router-link>
-              </div>
-              <div class="mt15">
-                <router-link class="cl-secondary" :to="localizedRoute('/store-locator')" exact>
-                  {{ $t('Store locator') }}
-                </router-link>
-              </div>
-            </div>
-          </div>
           <div class="row social mt30">
             <a
               class="social-icon mx10 brdr-circle no-underline"
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/enthrallrecords"
               :aria-label="$t('Go to Facebook')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="facebook icon" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD">
@@ -108,7 +19,7 @@
             </a>
             <a
               class="social-icon mx10 brdr-circle no-underline"
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/enthrallrecords"
               :aria-label="$t('Go to Instagram')"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="instagram icon" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD">
@@ -119,21 +30,11 @@
             </a>
             <a
               class="social-icon mx10 brdr-circle no-underline"
-              href="https://www.pinterest.com"
-              :aria-label="$t('Go to Pinterest')"
+              href="https://www.twitter.com/enthrallrecords"
+              :aria-label="$t('Go to Twitter')"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" class="pinterest icon" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD">
-                <path d="M0,19.9989 C0,31.0437 8.95264,40 20,40 C31.0454,40 40,31.0437 40,19.9989 C40,8.9541 31.0454,0 20,0 C8.95264,0 0,8.9541 0,19.9989 Z M13.3696,36.8771 C6.62793,34.2357 1.85059,27.6766 1.85059,19.9991 C1.85059,9.98682 9.96533,1.87463 19.9761,1.87463 C29.9868,1.87463 38.1016,9.98682 38.1016,19.9991 C38.1016,30.0094 29.9868,38.1238 19.9761,38.1238 C18.106,38.1238 16.3042,37.8409 14.6099,37.314 C15.3467,36.1101 16.4521,34.1372 16.8613,32.5627 C17.082,31.7145 17.9902,28.255 17.9902,28.255 C18.5815,29.3817 20.3081,30.3372 22.146,30.3372 C27.6108,30.3372 31.5508,25.3096 31.5508,19.0631 C31.5508,13.0758 26.6641,8.59448 20.3765,8.59448 C12.5552,8.59448 8.40137,13.847 8.40137,19.5643 C8.40137,22.2206 9.81543,25.5323 12.0776,26.5862 C12.4224,26.7448 12.6069,26.6741 12.686,26.342 L12.8516,25.6682 C12.9653,25.2057 13.1074,24.6292 13.1895,24.2877 C13.2324,24.1035 13.2109,23.9471 13.063,23.7672 C12.3135,22.8589 11.7158,21.1881 11.7158,19.6307 C11.7158,15.6335 14.7427,11.7649 19.8989,11.7649 C24.3525,11.7649 27.4697,14.7981 27.4697,19.1381 C27.4697,24.0414 24.9932,27.4388 21.7715,27.4388 C19.9932,27.4388 18.6606,25.9694 19.0869,24.1635 C19.272,23.3851 19.519,22.5848 19.7598,21.8065 C20.1851,20.4301 20.5889,19.1227 20.5889,18.1292 C20.5889,16.7367 19.8413,15.5757 18.2964,15.5757 C16.4756,15.5757 15.0166,17.4564 15.0166,19.9778 C15.0166,21.5823 15.5586,22.6683 15.5586,22.6683 C15.5586,22.6683 13.7612,30.2621 13.4336,31.6759 C13.0693,33.244 13.2109,35.444 13.3696,36.8771 Z"/>
-              </svg>
-            </a>
-            <a
-              class="social-icon mx10 brdr-circle no-underline"
-              href="https://www.youtube.com"
-              :aria-label="$t('Go to Youtube')"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" class="youtube icon" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD">
-                <path d="M20,0 C8.9541,0 0,8.95435 0,20 C0,31.0457 8.9541,40 20,40 C31.0459,40 40,31.0457 40,20 C40,8.95435 31.0459,0 20,0 Z M28.335,13.1244 C29.2529,13.3763 29.9756,14.1185 30.2212,15.061 C30.667,16.7692 30.667,20.3333 30.667,20.3333 C30.667,20.3333 30.667,23.8973 30.2212,25.6056 C29.9756,26.5481 29.2529,27.2903 28.335,27.5424 C26.6714,28 20,28 20,28 C20,28 13.3291,28 11.6655,27.5424 C10.7476,27.2903 10.0244,26.5481 9.7793,25.6056 C9.3335,23.8973 9.3335,20.3333 9.3335,20.3333 C9.3335,20.3333 9.3335,16.7692 9.7793,15.061 C10.0244,14.1185 10.7476,13.3763 11.6655,13.1244 C13.3291,12.6666 20,12.6666 20,12.6666 C20,12.6666 26.6714,12.6666 28.335,13.1244 Z"/>
-                <polygon points="0 6.667 0 0 5.333 3.333" transform="translate(18 17.33)"/>
+              <svg xmlns="http://www.w3.org/2000/svg" class="twitter icon" width="40" height="40" viewBox="0 0 40 40" fill="#BDBDBD">
+                <path d="M 40,20 C 40,31.05 31.05,40 20,40 8.95,40 0,31.05 0,20 0,8.95 8.95,0 20,0 31.05,0 40,8.95 40,20 Z M 16.34,30.55 c 8.87,0 13.72,-7.35 13.72,-13.72 0,-0.21 0,-0.42 -0.01,-0.62 0.94,-0.68 1.76,-1.53 2.41,-2.5 -0.86,0.38 -1.79,0.64 -2.77,0.76 1,-0.6 1.76,-1.54 2.12,-2.67 -0.93,0.55 -1.96,0.95 -3.06,1.17 -0.88,-0.94 -2.13,-1.52 -3.52,-1.52 -2.66,0 -4.82,2.16 -4.82,4.82 0,0.38 0.04,0.75 0.13,1.1 -4.01,-0.2 -7.56,-2.12 -9.94,-5.04 -0.41,0.71 -0.65,1.54 -0.65,2.42 0,1.67 0.85,3.15 2.15,4.01 -0.79,-0.02 -1.53,-0.24 -2.18,-0.6 0,0.02 0,0.04 0,0.06 0,2.34 1.66,4.28 3.87,4.73 -0.4,0.11 -0.83,0.17 -1.27,0.17 -0.31,0 -0.61,-0.03 -0.91,-0.09 0.61,1.92 2.39,3.31 4.5,3.35 -1.65,1.29 -3.73,2.06 -5.99,2.06 -0.39,0 -0.77,-0.02 -1.15,-0.07 2.11,1.38 4.65,2.18 7.37,2.18"/>
               </svg>
             </a>
           </div>
@@ -146,20 +47,10 @@
           <language-switcher v-if="multistoreEnabled" />
         </div>
         <div class="col-xs col-sm-9 end-xs">
-          <ul class="pl0 links" data-testid="bottomLinks">
-            <li class="inline-flex">
-              <router-link
-                class="cl-tertiary mr10 underline"
-                to="/legal"
-                exact
-              >
-                {{ $t('Legal notice') }}
-              </router-link>
-            </li>
             <li class="inline-flex">
               <router-link
                 class="cl-tertiary underline"
-                to="/privacy"
+                to="/i/privacy-policy-cookie-restriction-mode"
                 exact
               >
                 {{ $t('Privacy policy') }}

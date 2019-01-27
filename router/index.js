@@ -40,7 +40,7 @@ let routes = [
   { name: 'error', path: '/error', component: ErrorPage, meta: { layout: 'minimal' } },
   { name: 'custom-cms-page', path: '/custom-cms-page', component: CustomCmsPage },
   { name: 'cms-block-demo-page-ssr', path: '/cms-block-demo-page-ssr', component: CmsBlockDemoPageSsr },
-  { name: 'cms-page-sync', path: '/cms-page-sync', component: CmsData, props: {identifier: 'about-us', type: 'Page', sync: true} }
+  { name: 'cms-page-sync', path: '/cms-page-sync', component: CmsData, props: {identifier: 'privacy-policy-cookie-restriction-mode', type: 'Page', sync: true} }
 ]
 if (!config.products.useShortCatalogUrls) {
   routes = routes.concat([{ name: 'virtual-product', path: '/p/:parentSku/:slug', component: Product }, // :sku param can be marked as optional with ":sku?" (https://github.com/vuejs/vue-router/blob/dev/examples/route-matching/app.js#L16), but it requires a lot of work to adjust the rest of the site

@@ -17,13 +17,10 @@
               :routes="breadcrumbs.routes"
               :active-route="breadcrumbs.name"
             />
-            <h1 class="mb20 mt0 cl-mine-shaft product-name" data-testid="productName" itemprop="name">
+            <h1 class="mb20 mt0 cl-heather product-name" data-testid="productName" itemprop="name">
               {{ product.name | htmlDecode }}
               <web-share :title="product.name | htmlDecode" text="Check this product!" class="web-share"/>
             </h1>
-            <div class="mb20 uppercase cl-secondary">
-              sku: {{ product.sku }}
-            </div>
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               <meta itemprop="priceCurrency" :content="currentStore.i18n.currencyCode">
               <meta itemprop="price" :content="parseFloat(product.priceInclTax).toFixed(2)">
@@ -35,7 +32,7 @@
                   class="h3 cl-secondary"
                   v-if="product.special_price && product.priceInclTax && product.originalPriceInclTax"
                 >
-                  <span class="h2 cl-mine-shaft weight-700">
+                  <span class="h2 cl-heather weight-700">
                     {{ product.priceInclTax * product.qty | price }}
                   </span>&nbsp;
                   <span class="price-original h3">
@@ -43,7 +40,7 @@
                   </span>
                 </div>
                 <div
-                  class="h2 cl-mine-shaft weight-700"
+                  class="h2 cl-heather weight-700"
                   v-if="!product.special_price && product.priceInclTax"
                 >
                   {{ product.priceInclTax * product.qty | price }}
@@ -219,7 +216,6 @@
         </div>
       </div>
     </section>
-    <reviews v-show="OnlineOnly"/>
     <related-products
       type="upsell"
       :heading="$t('We found other products you might like')"
@@ -233,7 +229,6 @@
 import Product from '@vue-storefront/core/pages/Product'
 import VueOfflineMixin from 'vue-offline/mixin'
 import RelatedProducts from 'theme/components/core/blocks/Product/Related.vue'
-import Reviews from 'theme/components/core/blocks/Reviews/Reviews.vue'
 import AddToCart from 'theme/components/core/AddToCart.vue'
 import GenericSelector from 'theme/components/core/GenericSelector'
 import ColorSelector from 'theme/components/core/ColorSelector.vue'
@@ -263,7 +258,6 @@ export default {
     ProductTile,
     PromotedOffers,
     RelatedProducts,
-    Reviews,
     SizeSelector,
     WebShare
   },
@@ -371,7 +365,6 @@ $bg-secondary: color(secondary, $colors-background);
 .product-top-section {
   @media (max-width: 767px) {
     padding: 0;
-    background-color: $color-white;
   }
 }
 
@@ -452,7 +445,7 @@ $bg-secondary: color(secondary, $colors-background);
 }
 
 .product-image {
-  mix-blend-mode: multiply;
+  mix-blend-mode: screen;
   width: 460px;
 }
 

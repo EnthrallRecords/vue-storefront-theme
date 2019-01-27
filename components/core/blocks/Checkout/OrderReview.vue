@@ -11,7 +11,7 @@
       </div>
       <div class="col-xs-11 col-sm-9 col-md-11">
         <div class="row">
-          <div class="col-md-12" :class="{ 'cl-bg-tertiary' : !isFilled && !isActive }">
+          <div class="col-md-12" :class="{ 'cl-tertiary' : !isFilled && !isActive }">
             <h3 class="m0">
               {{ $t('Review order') }}
             </h3>

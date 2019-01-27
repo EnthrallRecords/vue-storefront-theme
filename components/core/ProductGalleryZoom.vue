@@ -132,7 +132,7 @@ $z-index-gallery: map-get($z-index, overlay) + 1;
       display: block;
       max-width: 100%;
       width: auto;
-      mix-blend-mode: multiply;
+      mix-blend-mode: screen;
       opacity: 0.9;
 
       &:hover {
@@ -163,7 +163,7 @@ $z-index-gallery: map-get($z-index, overlay) + 1;
 
     img {
       max-height: 100%;
-      mix-blend-mode: multiply;
+      mix-blend-mode: screen;
       max-width: 100%;
       height: auto;
       align-self: center;

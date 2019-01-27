@@ -19,7 +19,9 @@ $colors: (
   buccaneer: #755,
   forest-green: #308c14,
   puerto-rico: #4dba87,
-  mine-shaft: #333
+  mine-shaft: #333,
+  sunset-orange: #ec4c4c,
+  very-dark-cyan: #1d2a2b
 );
 
 // Theme generic colors
@@ -31,7 +33,7 @@ $colors-theme: (
     hover: map-get($colors, matterhorn)
   ),
   secondary: (
-    default: map-get($colors, gray),
+    default: map-get($colors, sunset-orange),
     hover: map-get($colors, matterhorn),
   ),
   accent: (

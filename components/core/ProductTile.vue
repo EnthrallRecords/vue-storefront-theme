@@ -165,7 +165,7 @@ $color-white: color(white);
     width: auto;
     height: auto;
     margin: auto;
-    mix-blend-mode: darken;
+    mix-blend-mode: lighten;
     opacity: 0.8;
     transform: scale(1);
     transition: 0.3s opacity $motion-main, 0.3s transform $motion-main;
