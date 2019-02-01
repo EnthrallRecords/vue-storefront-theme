@@ -26,30 +26,6 @@
         </div>
       </div>
     </div>
-    <div class="py50 px25">
-      <h4 class="h3 m0">
-        {{ $t('Safety') }}
-      </h4>
-      <p class="cl-tertiary lh20">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nullam sed tempor lorem. Vivamus volutpat eros id est semper accumsan.
-      </p>
-      <h4 class="h3 mb0">
-        {{ $t('Shipping') }}
-      </h4>
-      <p class="cl-tertiary lh20">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nullam sed tempor lorem. Vivamus volutpat eros id est semper accumsan.
-      </p>
-      <h4 class="h3 mb0">
-        {{ $t('Returns') }}
-      </h4>
-      <p class="cl-tertiary lh20">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nullam sed tempor lorem. Vivamus volutpat eros id est semper accumsan.
-      </p>
-    </div>
-  </div>
 </template>
 
 <script>

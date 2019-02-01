@@ -38,17 +38,17 @@
           </div>
         </div>
         <div class="row between-xs middle-xs px15 py5" v-if="isCheckoutPage">
-          <div class="col-xs-5 col-md-3 middle-xs">
+          <div class="col-xs-4 col-md-3 middle-xs">
             <div>
               <router-link :to="localizedRoute('/')" class="cl-tertiary links">
                 {{ $t('Return to shopping') }}
               </router-link>
             </div>
           </div>
-          <div class="col-xs-2 col-md-6 center-xs">
+          <div class="col-xs-4 col-md-6 center-xs">
             <logo width="auto" height="41px"/>
           </div>
-          <div class="col-xs-5 col-md-3 end-xs">
+          <div class="col-xs-4 col-md-3 end-xs">
             <div>
               <a v-if="!currentUser" href="#" @click.prevent="gotoAccount" class="cl-tertiary links">
                 {{ $t('Login to your account') }}

@@ -199,6 +199,11 @@
             />
           </div>
           <div class="col-xs-12 col-sm-5">
+            <div
+              class="lh30 h5"
+              itemprop="short_description"
+              v-html="product.short_description"
+            />
             <ul class="attributes p0 pt5 m0">
               <product-attribute
                 :key="attr.attribute_code"
@@ -216,12 +221,8 @@
         </div>
       </div>
     </section>
-    <related-products
-      type="upsell"
-      :heading="$t('We found other products you might like')"
-    />
-    <promoted-offers single-banner />
     <related-products type="related" />
+    <promoted-offers single-banner />
   </div>
 </template>
 

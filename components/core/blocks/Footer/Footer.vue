@@ -1,8 +1,7 @@
 <template>
-  <footer :class="{ 'brdr-top-1 brdr-cl-secondary': isCheckoutPage }">
-    <newsletter class=" flex brdr-bottom-1 brdr-cl-secondary" v-if="!isCheckoutPage"/>
+  <footer class="brdr-top-1 brdr-cl-secondary">
     <div
-      class="footer-links flex pt30 pb60 px40 bg-cl-secondary"
+      class="footer-links flex pt30 px40 bg-cl-secondary"
       v-if="!isCheckoutPage"
     >
       <div class="container">
@@ -41,12 +40,14 @@
         </div>
       </div>
     </div>
+    <newsletter class=" flex" v-if="!isCheckoutPage"/>
     <div class="container">
       <div class="row middle-xs px15 bottom-links">
         <div class="col-xs-5 col-sm-3 cl-tertiary">
           <language-switcher v-if="multistoreEnabled" />
         </div>
         <div class="col-xs col-sm-9 end-xs">
+          <ul>
             <li class="inline-flex">
               <router-link
                 class="cl-tertiary underline"

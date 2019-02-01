@@ -12,6 +12,7 @@ $colors: (
   white-smoke: #f2f2f2,
   gainsboro: #e0e0e0,
   silver: #bdbdbd,
+  heather: #b5c4cd,
   gray: #828282,
   suva-gray: #8e8e8e,
   matterhorn: #4f4f4f,
@@ -21,7 +22,8 @@ $colors: (
   puerto-rico: #4dba87,
   mine-shaft: #333,
   sunset-orange: #ec4c4c,
-  very-dark-cyan: #1d2a2b
+  very-dark-cyan: #1d2a2b,
+  vivid-orange: #f38f04
 );
 
 // Theme generic colors
@@ -29,7 +31,7 @@ $colors: (
 // Value: color value or map with default, hover, focus color values
 $colors-theme: (
   primary: (
-    default: map-get($colors, matterhorn),
+    default: map-get($colors, white-smoke),
     hover: map-get($colors, matterhorn)
   ),
   secondary: (
@@ -37,10 +39,10 @@ $colors-theme: (
     hover: map-get($colors, matterhorn),
   ),
   accent: (
-    default: map-get($colors, matterhorn),
+    default: map-get($colors, silver),
     hover: map-get($colors, black),
   ),
-  tertiary: map-get($colors, silver),
+  tertiary: map-get($colors, gray),
   success: map-get($colors, puerto-rico),
   warning: map-get($colors, buccaneer),
   error: map-get($colors, burnt-sienna)
@@ -53,12 +55,12 @@ $colors-border: (
 
 $colors-background: (
   primary: (
-    default: map-get($colors, white),
+    default: map-get($colors, very-dark-cyan),
     hover: map-get($colors, silver)
   ),
   secondary: (
-    default: map-get($colors, white-smoke),
+    default: map-get($colors, very-dark-cyan),
     hover: map-get($colors, gainsboro)
   ),
-  tertiary: map-get($colors, suva-gray)
+  tertiary: map-get($colors, very-dark-cyan)
 );

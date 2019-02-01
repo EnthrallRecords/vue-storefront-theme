@@ -55,42 +55,6 @@
               :parent-slug="category.slug"
             />
           </li>
-          <li @click="closeMenu" v-if="isCurrentMenuShowed" class="bg-cl-secondary">
-            <router-link
-              class="block px25 py20 brdr-bottom-1 brdr-cl-secondary cl-accent no-underline fs-medium-small"
-              :to="localizedRoute('/sale')"
-              exact
-            >
-              {{ $t('Sale') }}
-            </router-link>
-          </li>
-          <li @click="closeMenu" v-if="isCurrentMenuShowed" class="bg-cl-secondary">
-            <router-link
-              class="block px25 py20 brdr-bottom-1 brdr-cl-secondary cl-accent no-underline fs-medium-small"
-              :to="localizedRoute('/magazine')"
-              exact
-            >
-              {{ $t('Magazine') }}
-            </router-link>
-          </li>
-          <li @click="closeMenu" v-if="compareIsActive && isCurrentMenuShowed" class="bg-cl-secondary">
-            <router-link
-              class="block px25 py20 brdr-bottom-1 brdr-cl-secondary cl-accent no-underline fs-medium-small"
-              :to="localizedRoute('/compare')"
-              exact
-            >
-              {{ $t('Compare products') }}
-            </router-link>
-          </li>
-          <li @click="closeMenu" v-if="isCurrentMenuShowed" class="bg-cl-secondary">
-            <router-link
-              class="block px25 py20 brdr-bottom-1 brdr-cl-secondary cl-accent no-underline fs-medium-small"
-              :to="localizedRoute('/order-tracking')"
-              exact
-            >
-              {{ $t('Track my order') }}
-            </router-link>
-          </li>
           <li @click="closeMenu" class="brdr-bottom-1 brdr-cl-secondary bg-cl-secondary flex">
             <sub-btn
               v-if="currentUser"
