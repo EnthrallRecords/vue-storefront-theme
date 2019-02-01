@@ -153,7 +153,7 @@ $screen-l: 1170px;
     border-style: solid;
     border-color: $border;
     border-width: 1px 0 1px 0;
-    background-color: mix(#000, $color-white, 2%);
+    background-color: mix($color-white, $color-product-bg, 5%);
     opacity: .95;
 
     @media (min-width: $screen-l) {
@@ -210,7 +210,7 @@ $screen-l: 1170px;
       @extend .compare__attributes;
       width: $features-column-width-mobile;
       cursor: auto;
-      background: mix(#000, $color-white, 2%);
+      background: mix($color-white, $color-product-bg, 5%);
 
       @media (min-width: $screen-l) {
         width: $features-column-width;
