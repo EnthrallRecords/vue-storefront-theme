@@ -108,10 +108,6 @@
             v-model.trim="payment.apartmentNumber"
             @blur="$v.payment.apartmentNumber.$touch()"
             autocomplete="address-line2"
-            :validation="{
-              condition: $v.payment.apartmentNumber.$error && !$v.payment.apartmentNumber.required,
-              text: $t('Field is required')
-            }"
           />
 
           <base-input
@@ -182,6 +178,10 @@
             :placeholder="$t('Phone Number *')"
             v-model.trim="payment.phoneNumber"
             autocomplete="tel"
+            :validation="{
+              condition: $v.payment.phoneNumber.$error && !$v.payment.phoneNumber.required,
+              text: $t('Field is required')
+            }"
           />
 
           <base-checkbox

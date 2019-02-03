@@ -99,10 +99,6 @@
             v-model.trim="shipping.apartmentNumber"
             @blur="$v.shipping.apartmentNumber.$touch()"
             autocomplete="address-line2"
-            :validation="{
-              condition: $v.shipping.apartmentNumber.$error && !$v.shipping.apartmentNumber.required,
-              text: $t('Field is required')
-            }"
           />
 
           <base-input
@@ -173,6 +169,10 @@
             :placeholder="$t('Phone Number *')"
             v-model.trim="shipping.phoneNumber"
             autocomplete="tel"
+            :validation="{
+              condition: $v.shipping.phoneNumber.$error && !$v.shipping.phoneNumber.required,
+              text: $t('Field is required')
+            }"
           />
 
           <h4 class="col-xs-12">
