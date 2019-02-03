@@ -18,9 +18,9 @@
             <h3 v-if="OnlineOnly" >
               {{ $t('Your purchase') }}
             </h3>
-            <p v-if="OnlineOnly" v-html="this.$t('You have successfuly placed the order. You can check status of your order by using our <b>delivery status</b> feature. You will receive an order confirmation e-mail with details of your order and a link to track its progress.')" />
+            <p v-if="OnlineOnly" v-html="this.$t('You have successfuly placed the order. You will receive an order confirmation e-mail with details of your order and a link to track its progress.')" />
             <p v-if="OnlineOnly && lastOrderConfirmation" v-html="this.$t('The server order id has been set to ') + lastOrderConfirmation.backendOrderId"/>
-            <p v-if="OnlineOnly" v-html="this.$t('E-mail us at <b>demo@vuestorefront.io</b> with any questions, suggestions how we could improve products or shopping experience')"/>
+            <p v-if="OnlineOnly" v-html="this.$t('E-mail us at <b>info@enthrallrecords.com</b> with any questions')"/>
 
             <h4 v-if="OfflineOnly">
               {{ $t('You are offline') }}
@@ -43,7 +43,7 @@
             <h4>
               {{ $t('Your Account') }}
             </h4>
-            <p v-html="this.$t('You can log to your account using e-mail and password defined earlier. On your account you can <b>edit your profile data,</b> check <b>history of transactions,</b> edit <b>subscription to newsletter.</b>')"/>
+            <p v-html="this.$t('You can log in to your account using e-mail and password defined earlier. On your account you can <b>edit your profile data,</b> check <b>history of transactions,</b> edit <b>subscription to newsletter.</b>')"/>
           </div>
           <div class="col-md-6 bg-cl-secondary thank-you-improvment">
             <h3>
@@ -62,7 +62,7 @@
                 :autofocus="true"
               />
               <button-outline color="dark">
-                {{ $t('Give a feedback') }}
+                {{ $t('Give feedback') }}
               </button-outline>
             </form>
           </div>

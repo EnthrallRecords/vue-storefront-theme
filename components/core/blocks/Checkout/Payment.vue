@@ -90,7 +90,7 @@
             class="col-xs-12 mb25"
             type="text"
             name="street-address"
-            :placeholder="$t('Street name *')"
+            :placeholder="$t('Street address *')"
             v-model.trim="payment.streetAddress"
             @blur="$v.payment.streetAddress.$touch()"
             autocomplete="address-line1"
@@ -104,7 +104,7 @@
             class="col-xs-12 mb25"
             type="text"
             name="apartment-number"
-            :placeholder="$t('House/Apartment number *')"
+            :placeholder="$t('Street address 2')"
             v-model.trim="payment.apartmentNumber"
             @blur="$v.payment.apartmentNumber.$touch()"
             autocomplete="address-line2"
@@ -179,7 +179,7 @@
             class="col-xs-12 mb25"
             type="text"
             name="phone-number"
-            :placeholder="$t('Phone Number')"
+            :placeholder="$t('Phone Number *')"
             v-model.trim="payment.phoneNumber"
             autocomplete="tel"
           />
@@ -359,7 +359,7 @@ export default {
           streetAddress: {
             required
           },
-          apartmentNumber: {
+          phoneNumber: {
             required
           },
           zipCode: {

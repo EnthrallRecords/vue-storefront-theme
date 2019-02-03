@@ -18,7 +18,7 @@ i {
   color: map-get(map-get($colors-theme, primary), default);
 }
 
-input {
+input, select {
   color: map-get($colors,vivid-orange);
 }
 

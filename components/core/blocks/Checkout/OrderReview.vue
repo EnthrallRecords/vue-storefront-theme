@@ -34,25 +34,6 @@
               <div class="cartsummary-wrapper">
                 <cart-summary />
               </div>
-              <base-checkbox
-                class="col-xs-11 col-sm-12 col-md-8 bg-cl-secondary p15 mb35 ml10"
-                id="acceptTermsCheckbox"
-                @click="orderReview.terms = !orderReview.terms"
-                @blur="$v.orderReview.terms.$touch()"
-                v-model="orderReview.terms"
-                :validation="{
-                  condition: !$v.orderReview.terms.required && $v.orderReview.terms.$error,
-                  text: $t('Field is required')
-                }"
-              >
-                {{ $t('I agree to') }}
-                <span
-                  class="link pointer"
-                  @click.prevent="$bus.$emit('modal-toggle', 'modal-terms')"
-                >
-                  {{ $t('Terms and conditions') }}
-                </span>
-              </base-checkbox>
             </div>
           </div>
         </div>
@@ -107,7 +88,6 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
 import Composite from '@vue-storefront/core/mixins/composite'
 
 import BaseCheckbox from 'theme/components/core/blocks/Form/BaseCheckbox'
@@ -128,9 +108,6 @@ export default {
   mixins: [OrderReview, Composite],
   validations: {
     orderReview: {
-      terms: {
-        required
-      }
     }
   },
   methods: {
