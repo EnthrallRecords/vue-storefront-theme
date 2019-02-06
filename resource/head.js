@@ -27,6 +27,7 @@ export default {
     { rel: 'manifest', href: '/assets/manifest.json' },
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons' }
   ],
+  __dangerouslyDisableSanitizers: ['script'],
   script: [
     {
       src: 'https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js',
@@ -34,13 +35,13 @@ export default {
       integrity: 'sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA',
       crossorigin: 'anonymous'
     },
-    { 
-    	  innerHTML: 'window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date; ga(\'create\', \'UA-40518004-3\', \'auto\'); ga(\'send\', \'pageview\');',
-    	  type: 'text/javascript'
+    {
+      innerHTML: 'window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date; ga("create", "UA-40518004-3", "auto"); ga("send", "pageview");',
+      type: 'text/javascript'
     },
     {
-    	  src: 'https://www.google-analytics.com/analytics.js',
-    	  async: true
+      src: 'https://www.google-analytics.com/analytics.js',
+      async: true
     }
   ]
 }
