@@ -1,17 +1,17 @@
 export default {
-  title: 'Default Theme',
-  titleTemplate: '%s - Vue Storefront',
+  title: 'Enthrall Records Shop',
+  titleTemplate: '%s - Enthrall Records Shop',
   htmlAttrs: {
     lang: 'en'
   },
   meta: [
     { charset: 'utf-8' },
-    { vmid: 'description', name: 'description', content: 'Vue Storefront is a standalone PWA storefront for your eCommerce, possible to connect with any eCommerce backend (eg. Magento, Prestashop or Shopware) through the API.' },
+    { vmid: 'description', name: 'description', content: 'Independent record label based out of Philly specializing in punk, emo, and post-hardcore. Our main goal is to connect ear holes with good music.' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1, minimal-ui' },
     { name: 'robots', content: 'index, follow' },
     { name: 'mobile-web-app-capable', content: 'yes' },
-    { name: 'theme-color', content: '#ffffff' },
-    { name: 'apple-mobile-web-app-status-bar-style', content: '#ffffff' }
+    { name: 'theme-color', content: '#f38f04' },
+    { name: 'apple-mobile-web-app-status-bar-style', content: '#f38f04' }
   ],
   link: [
     { rel: 'icon', type: 'image/png', href: '/assets/favicon-32x32.png', sizes: '32x32' },
@@ -33,6 +33,14 @@ export default {
       async: true,
       integrity: 'sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA',
       crossorigin: 'anonymous'
+    },
+    { 
+    	  innerHTML: 'window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date; ga(\'create\', \'UA-40518004-3\', \'auto\'); ga(\'send\', \'pageview\');',
+    	  type: 'text/javascript'
+    },
+    {
+    	  src: 'https://www.google-analytics.com/analytics.js',
+    	  async: true
     }
   ]
 }

@@ -11,12 +11,12 @@
       <div class="container">
         <div class="lh16 h5 weight-400">
           <p>
-            {{ $t("We've noticed Internal Server Error while rendering this request.") }}
+            {{ $t("We noticed an error while handling your request.") }}
           </p>
           <p>
-            {{ $t('If you need an assistance you can drop us a line on') }}
-            <a href="mailto:contributors@vuestorefront.io" class="cl-secondary no-underline">
-              {{ $t('a contact page') }}
+            {{ $t('If you need assistance you can drop us a line at') }}
+            <a href="mailto:info@enthrallrecords.com" class="cl-secondary no-underline">
+              {{ $t('contact mail') }}
             </a>
           </p>
         </div>

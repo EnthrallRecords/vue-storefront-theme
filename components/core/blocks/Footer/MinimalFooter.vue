@@ -47,7 +47,7 @@
             <li class="inline-flex">
               <router-link
                 class="cl-tertiary underline"
-                to="/i/privacy-policy-cookie-restriction-mode"
+                to="/privacy"
                 exact
               >
                 {{ $t('Privacy policy') }}

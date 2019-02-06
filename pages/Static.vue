@@ -29,7 +29,7 @@
 <script>
 import i18n from '@vue-storefront/i18n'
 import Breadcrumbs from 'theme/components/core/Breadcrumbs'
-import StaticExample from 'theme/components/theme/blocks/Static/Example'
+import StaticPrivacy from 'theme/components/theme/blocks/Static/Privacy'
 
 export default {
   components: {
@@ -62,14 +62,7 @@ export default {
   data () {
     return {
       navigation: [
-        { title: i18n.t('About us'), link: '/about-us', component: StaticExample },
-        { title: i18n.t('Customer service'), link: '/customer-service', component: StaticExample },
-        { title: i18n.t('Store locator'), link: '/store-locator', component: StaticExample },
-        { title: i18n.t('Delivery'), link: '/delivery', component: StaticExample },
-        { title: i18n.t('Return policy'), link: '/returns', component: StaticExample },
-        { title: i18n.t('Privacy policy'), link: '/privacy', component: StaticExample },
-        { title: i18n.t('Size guide'), link: '/size-guide', component: StaticExample },
-        { title: i18n.t('Contact us'), link: '/contact', component: StaticExample }
+        { title: i18n.t('Privacy policy'), link: '/privacy', component: StaticPrivacy }
       ],
       activeComponent: null
     }

@@ -14,14 +14,10 @@
             {{ $t("Unfortunately we can't find the page you are looking for.") }}
           </p>
           <p>
-            {{ $t('If you need an assistance you can drop us a line on') }}
-            <router-link :to="localizedRoute('/')" class="cl-secondary no-underline">
-              {{ $t('a chat') }}
-            </router-link>
-            {{ $t('or write to us through') }}
-            <router-link :to="localizedRoute('/contact')" class="cl-secondary no-underline">
-              {{ $t('a contact page') }}
-            </router-link>.
+            {{ $t('If you need assistance you can drop us a line at') }}
+            <a href="mailto:info@enthrallrecords.com" class="cl-secondary no-underline">
+              {{ $t('contact mail') }}
+            </a>
           </p>
           <p>
             {{ $t('You can also use') }}
