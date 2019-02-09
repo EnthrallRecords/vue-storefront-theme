@@ -251,7 +251,7 @@ export default {
   metaInfo () {
     return {
       meta: [
-        { 'property': 'og:type', 'content': 'prodcut' },
+        { 'property': 'og:type', 'content': 'product' },
         { 'property': 'og:title', 'content': this.product.name },
         { 'property': 'product:price:currency', 'content': this.currentStore.i18n.currencyCode },
         { 'property': 'product:price:amount', 'content': parseFloat(this.product.priceInclTax).toFixed(2) },
