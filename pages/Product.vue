@@ -255,7 +255,7 @@ export default {
         { 'property': 'og:title', 'content': this.product.name },
         { 'property': 'product:price:currency', 'content': this.currentStore.i18n.currencyCode },
         { 'property': 'product:price:amount', 'content': parseFloat(this.product.priceInclTax).toFixed(2) },
-        { 'property': 'og:description', 'content': this.product.description },
+        { 'property': 'og:description', 'content': this.product.description.replace(/<(.|\n)*?>/g, '') },
         { 'property': 'og:image', 'content': this.$store.state.config.images.baseUrl.replace(/\/$/, this.product.image) }
       ]
     }
