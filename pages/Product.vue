@@ -188,7 +188,6 @@
           <div class="col-xs-12 col-sm-5">
             <div
               class="lh30 h5"
-              itemprop="short_description"
               v-html="product.short_description"
             />
             <ul class="attributes p0 pt5 m0">
@@ -248,6 +247,18 @@ export default {
     RelatedProducts,
     SizeSelector,
     WebShare
+  },
+  metaInfo () {                              
+    return {                                                                                              
+      meta: [    
+        { 'property': 'og:type', 'content': 'prodcut' },                        
+        { 'property': 'og:title', 'content': this.product.name },                      
+        { 'property': 'product:price:currency', 'content': this.currentStore.i18n.currencyCode },
+        { 'property': 'product:price:amount', 'content': parseFloat(this.product.priceInclTax).toFixed(2) },
+        { 'property': 'og:description', 'content': this.product.description },
+        { 'property': 'og:image', 'content': this.$store.state.config.images.baseUrl.replace(/\/$/, this.product.image) }
+      ]        
+    }               
   },
   mixins: [Product, VueOfflineMixin],
   data () {
