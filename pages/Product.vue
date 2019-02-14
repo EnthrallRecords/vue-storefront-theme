@@ -256,7 +256,7 @@ export default {
         { 'property': 'og:title', 'content': this.product.name },
         { 'property': 'product:price:currency', 'content': this.currentStore.i18n.currencyCode },
         { 'property': 'product:price:amount', 'content': parseFloat(this.product.priceInclTax).toFixed(2) },
-        { 'vmid': 'description', 'name': 'description', 'property': 'og:description', 'content': this.product.description.match(/<p>(.*?)<\/p>/)[1] },
+        { 'vmid': 'description', 'name': 'description', 'property': 'og:description', 'content': this.product.description.includes('<p>') ? this.product.description.match(/<p>(.*?)<\/p>/)[1] : this.product.description },
         { 'property': 'og:image', 'content': this.$store.state.config.images.baseUrl.replace(/\/$/, this.product.image) }
       ]
     }
