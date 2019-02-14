@@ -32,14 +32,14 @@ export default {
           link: '/c/music'
         },
         {
-          image: '/assets/tl/Apparel.png',
-          alt: 'Apparel',
-          link: '/c/apparel'
-        },
-        {
           image: '/assets/tl/Merch.png',
           alt: 'Merch',
           link: '/c/merch'
+        },
+        {
+          image: '/assets/tl/Apparel.png',
+          alt: 'Apparel',
+          link: '/c/apparel'
         }
       ]
     }
