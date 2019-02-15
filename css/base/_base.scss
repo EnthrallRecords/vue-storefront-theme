@@ -18,10 +18,6 @@ i {
   color: map-get(map-get($colors-theme, primary), default);
 }
 
-input, select {
-  color: map-get($colors,vivid-orange);
-}
-
 #app {
   overflow-x: hidden;
 }
