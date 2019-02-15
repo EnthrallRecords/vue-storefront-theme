@@ -6,7 +6,7 @@ export default {
   },
   meta: [
     { charset: 'utf-8' },
-    { vmid: 'description', name: 'description', content: 'Independent record label based out of Philly specializing in punk, emo, and post-hardcore. Our main goal is to connect ear holes with good music.' },
+    { vmid: 'description', name: 'description', content: 'Independent record label based out of Philly specializing in punk. Our main goal is to connect ear holes with good music.' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1, minimal-ui' },
     { name: 'robots', content: 'index, follow' },
     { name: 'mobile-web-app-capable', content: 'yes' },
