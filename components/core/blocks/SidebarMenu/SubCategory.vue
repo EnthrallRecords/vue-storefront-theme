@@ -144,11 +144,29 @@ export default {
 }
 </script>
 <style scoped>
+@import "~theme/css/animations/transitions";
+@import '~theme/css/variables/colors';
+@import '~theme/css/helpers/functions/color';
+$color-suva: color(suva-gray);
+
   .sidebar-submenu {
     left: 0;
     top: 0;
     min-height: 100%;
     transform: translateX(-100%);
+
+    li {
+      &:hover,
+      &:focus {
+        background-color: $color-suva;
+      }
+      &.bg-cl-primary {
+        &:hover,
+        &:focus {
+          background-color: $color-suva;
+        }
+      }
+    }
   }
 
   .subcategory-item {
