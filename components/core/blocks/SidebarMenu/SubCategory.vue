@@ -143,7 +143,7 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="scss" scoped>
 @import "~theme/css/animations/transitions";
 @import '~theme/css/variables/colors';
 @import '~theme/css/helpers/functions/color';
