@@ -13,7 +13,7 @@
           <nav class="static-menu serif h4 mb35">
             <ul class="m0 p0">
               <li class="mb10" v-for="page in navigation" :key="page.id">
-                <router-link :to="localizedRoute(page.link)" @click.native="setContent(page.component)" class="cl-accent relative">{{ page.title }}</router-link>
+                <router-link :to="localizedRoute(page.link)" class="cl-accent relative">{{ page.title }}</router-link>
               </li>
             </ul>
           </nav>
@@ -41,9 +41,6 @@ export default {
       meta: this.$route.meta.description ? [{vmid: 'description', description: this.$route.meta.description}] : []
     }
   },
-  created () {
-    this.activeComponent = this.navigation.find(nav => nav.link === this.$route.path) ? this.navigation.find(nav => nav.link === this.$route.path).component : null
-  },
   props: {
     title: {
       type: String,
@@ -54,17 +51,17 @@ export default {
       required: true
     }
   },
-  methods: {
-    setContent (component) {
-      this.activeComponent = component
+  computed: {
+    activeComponent () {
+      const matchedNav = this.navigation.find(nav => nav.link === this.$route.path)
+      return matchedNav ? matchedNav.component : null
     }
   },
   data () {
     return {
       navigation: [
         { title: i18n.t('Privacy policy'), link: '/privacy', component: StaticPrivacy }
-      ],
-      activeComponent: null
+      ]
     }
   }
 }

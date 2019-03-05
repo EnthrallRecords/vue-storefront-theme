@@ -43,7 +43,7 @@
                   class="h2 cl-heather weight-700"
                   v-if="!product.special_price && product.priceInclTax"
                 >
-                  {{ product.priceInclTax * product.qty | price }}
+                  {{ product.qty > 0 ? product.priceInclTax * product.qty : product.priceInclTax | price }}
                 </div>
               </div>
               <div
@@ -122,22 +122,24 @@
               v-else-if="product.custom_options && product.custom_options.length > 0 && !loading"
               :product="product"
             />
-            <div class="row m0 mb15" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle'">
-              <div>
-                <label class="qty-label flex" for="quantity">{{ $t('Quantity') }}</label>
-                <input
-                  type="number"
-                  min="0"
-                  class="m0 no-outline qty-input py10 brdr-cl-primary bg-cl-transparent h4"
-                  id="quantity"
-                  focus
-                  v-model="product.qty"
-                >
-              </div>
+            <div class="row m0 mb35" v-if="product.type_id !== 'grouped' && product.type_id !== 'bundle'">
+              <base-input-number
+                :name="$t('Quantity')"
+                v-model="product.qty"
+                :min="1"
+                @blur="$v.$touch()"
+                :validations="[
+                  {
+                    condition: $v.product.qty.$error && !$v.product.qty.minValue,
+                    text: $t('Quantity must be above 0')
+                  }
+                ]"
+              />
             </div>
             <div class="row m0">
               <add-to-cart
                 :product="product"
+                :disabled="$v.product.qty.$error && !$v.product.qty.minValue"
                 class="col-xs-12 col-sm-4 col-md-6"
               />
             </div>
@@ -145,7 +147,7 @@
               <div class="col-xs-6 col-sm-3 col-md-6">
                 <wishlist-button :product="product" />
               </div>
-              <div class="col-xs-6 col-sm-3 col-md-6">
+              <div class="col-xs-6 col-sm-3 col-md-6 product__add-to-compare">
                 <button
                   @click="isOnCompare ? removeFromList('compare') : addToList('compare')"
                   class="
@@ -213,9 +215,11 @@
 </template>
 
 <script>
+import { minValue } from 'vuelidate/lib/validators'
 import Product from '@vue-storefront/core/pages/Product'
 import VueOfflineMixin from 'vue-offline/mixin'
 import RelatedProducts from 'theme/components/core/blocks/Product/Related.vue'
+import Reviews from 'theme/components/core/blocks/Reviews/Reviews.vue'
 import AddToCart from 'theme/components/core/AddToCart.vue'
 import GenericSelector from 'theme/components/core/GenericSelector'
 import ColorSelector from 'theme/components/core/ColorSelector.vue'
@@ -230,6 +234,8 @@ import ProductGallery from 'theme/components/core/ProductGallery'
 import PromotedOffers from 'theme/components/theme/blocks/PromotedOffers/PromotedOffers'
 import focusClean from 'theme/components/theme/directives/focusClean'
 import WebShare from '@vue-storefront/core/modules/social-share/components/WebShare'
+import BaseInputNumber from 'theme/components/core/blocks/Form/BaseInputNumber'
+
 export default {
   components: {
     'WishlistButton': () => import(/* webpackChunkName: "wishlist" */'theme/components/core/blocks/Wishlist/AddToWishlist'),
@@ -246,7 +252,8 @@ export default {
     PromotedOffers,
     RelatedProducts,
     SizeSelector,
-    WebShare
+    WebShare,
+    BaseInputNumber
   },
   metaInfo () {
     return {
@@ -287,6 +294,13 @@ export default {
         action1: { label: this.$t('OK') }
       })
     }
+  },
+  validations: {
+    product: {
+      qty: {
+        minValue: minValue(1)
+      }
+    }
   }
 }
 </script>
@@ -299,6 +313,15 @@ $color-tertiary: color(tertiary);
 $color-secondary: color(secondary);
 $color-white: color(white);
 $bg-secondary: color(secondary, $colors-background);
+
+.product {
+  &__add-to-compare {
+    display: none;
+    @media (min-width: 767px) {
+      display: block;
+    }
+  }
+}
 
 .breadcrumbs {
   @media (max-width: 767px) {
@@ -365,6 +388,7 @@ $bg-secondary: color(secondary, $colors-background);
 .product-top-section {
   @media (max-width: 767px) {
     padding: 0;
+    background-color: $color-white;
   }
 }
 
@@ -445,20 +469,8 @@ $bg-secondary: color(secondary, $colors-background);
 }
 
 .product-image {
-  mix-blend-mode: screen;
+  mix-blend-mode: multiply;
   width: 460px;
-}
-
-.qty-input {
-  border-style: solid;
-  border-width: 0 0 1px 0;
-  width: 90px;
-}
-
-.qty-label {
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 14px;
 }
 
 .web-share {
