@@ -176,7 +176,7 @@ export default {
 @import '~theme/css/variables/colors';
 @import '~theme/css/helpers/functions/color';
 $bg-secondary: color(secondary, $colors-background);
-$color-gainsboro: color(gainsboro);
+$color-suva: color(suva-gray);
 $color-matterhorn: color(matterhorn);
 $color-heather: color(heather);
 
@@ -200,12 +200,12 @@ $color-heather: color(heather);
   li {
     &:hover,
     &:focus {
-      background-color: $color-gainsboro;
+      background-color: $color-suva;
     }
     &.bg-cl-primary {
       &:hover,
       &:focus {
-        background-color: $bg-secondary;
+        background-color: $color-suva;
       }
     }
     a {
@@ -226,7 +226,7 @@ $color-heather: color(heather);
 
   .close-btn {
     i {
-      color: $color-gainsboro;
+      color: $color-suva;
     }
     &:hover,
     &:focus {
