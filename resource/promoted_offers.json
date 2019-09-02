@@ -1,5 +1,10 @@
 {
   "mainBanners": [
+    {
+      "title": "Tape Sale",
+      "image": "/assets/labor_day_sale.png",
+      "link": "/c/tapes"
+    }	
   ],
   "smallBanners": [
   ],
