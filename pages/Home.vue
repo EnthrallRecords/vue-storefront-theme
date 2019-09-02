@@ -1,7 +1,7 @@
 <template>
   <div id="home">
 
-    <promoted-offers/>
+    <promoted-offers single-banner />
 
     <section
       class="new-collection container px15"
