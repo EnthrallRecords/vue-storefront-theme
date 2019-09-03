@@ -2,7 +2,7 @@
   <section v-if="!singleBanner" class="offers container my30 px15 cl-black">
     <div class="row">
       <div
-        class="offer-container col-xs-12 col-sm-6 pb15"
+        class="offer-container col-xs-12 pb15"
         v-for="(banner, index) in banners.mainBanners"
         :key="index"
       >
@@ -100,7 +100,7 @@ export default {
     }
   }
   .offer {
-    height: 735px;
+    height: 330px;
     display: flex;
     flex-direction: column;
     align-items: center;
