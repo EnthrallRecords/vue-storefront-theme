@@ -4,7 +4,7 @@
       :width="width"
       :height="height"
       src="/assets/logo.svg"
-      alt="Vuestore logo"
+      alt="Enthrall Records logo"
     >
   </router-link>
 </template>
