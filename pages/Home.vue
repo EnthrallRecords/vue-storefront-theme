@@ -1,15 +1,13 @@
 <template>
   <div id="home">
-
     <promoted-offers />
 
-    <section
-      class="new-collection container px15"
-      v-if="everythingNewCollection && everythingNewCollection.length > 0"
-    >
+    <section class="new-collection container px15" v-if="everythingNewCollection && everythingNewCollection.length">
       <div>
         <header class="col-md-12">
-          <h2 class="align-center cl-accent">{{ $t('Everything new') }}</h2>
+          <h2 class="align-center cl-accent">
+            {{ $t('Everything new') }}
+          </h2>
         </header>
       </div>
       <div class="row center-xs">
@@ -17,39 +15,42 @@
       </div>
     </section>
 
-    <section class="container pb60 px15">
+    <section v-if="isOnline" class="container pb60 px15">
       <tile-links />
     </section>
-    <Onboard/>
+    <Onboard />
   </div>
 </template>
 
 <script>
 // query constructor
 import { prepareQuery } from '@vue-storefront/core/modules/catalog/queries/common'
+import { isServer, onlineHelper } from '@vue-storefront/core/helpers'
 
 // Core pages
 import Home from '@vue-storefront/core/pages/Home'
 
 // Theme core components
 import ProductListing from 'theme/components/core/ProductListing'
-import HeadImage from 'theme/components/core/blocks/MainSlider/HeadImage'
 
 // Theme local components
 import Onboard from 'theme/components/theme/blocks/Home/Onboard'
 import PromotedOffers from 'theme/components/theme/blocks/PromotedOffers/PromotedOffers'
 import TileLinks from 'theme/components/theme/blocks/TileLinks/TileLinks'
 import { Logger } from '@vue-storefront/core/lib/logger'
+import { mapGetters } from 'vuex'
+import config from 'config'
+
 export default {
   mixins: [Home],
   components: {
-    HeadImage,
     Onboard,
     ProductListing,
     PromotedOffers,
     TileLinks
   },
   computed: {
+    ...mapGetters('user', ['isLoggedIn']),
     categories () {
       return this.getCategories
     },
@@ -58,6 +59,9 @@ export default {
     },
     coolBagsCollection () {
       return this.$store.state.homepage.coolbags_collection
+    },
+    isOnline () {
+      return onlineHelper.isOnline
     }
   },
   created () {
@@ -73,9 +77,17 @@ export default {
       }
     }
   },
+  mounted () {
+    if (!this.isLoggedIn && localStorage.getItem('redirect')) this.$bus.$emit('modal-show', 'modal-signup')
+  },
+  watch: {
+    isLoggedIn () {
+      const redirectObj = localStorage.getItem('redirect')
+      if (redirectObj) this.$router.push(redirectObj)
+      localStorage.removeItem('redirect')
+    }
+  },
   async asyncData ({ store, route }) { // this is for SSR purposes to prefetch data
-    const config = store.state.config
-
     Logger.info('Calling asyncData in Home (theme)')()
 
     let newProductsQuery = prepareQuery({ queryConfig: 'newProducts' })
@@ -84,8 +96,7 @@ export default {
     const newProductsResult = await store.dispatch('product/list', {
       query: newProductsQuery,
       size: 8,
-      sort: 'created_at:desc',
-      includeFields: config.entities.optimize ? (config.products.setFirstVarianAsDefaultInURL ? config.entities.productListWithChildren.includeFields : config.entities.productList.includeFields) : []
+      sort: 'created_at:desc'
     })
     if (newProductsResult) {
       store.state.homepage.new_collection = newProductsResult.items
@@ -101,8 +112,21 @@ export default {
       store.state.homepage.coolbags_collection = coolBagsResult.items
     }
 
-    await store.dispatch('promoted/updateHeadImage')
     await store.dispatch('promoted/updatePromotedOffers')
+  },
+  beforeRouteEnter (to, from, next) {
+    if (!isServer && !from.name) { // Loading products to cache on SSR render
+      next(vm => {
+        let newProductsQuery = prepareQuery({ queryConfig: 'newProducts' })
+        vm.$store.dispatch('product/list', {
+          query: newProductsQuery,
+          size: 8,
+          sort: 'created_at:desc'
+        })
+      })
+    } else {
+      next()
+    }
   }
 }
 </script>

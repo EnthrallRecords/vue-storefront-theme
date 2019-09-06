@@ -1,7 +1,7 @@
 <template>
   <div class="media-zoom">
     <i
-      class="media-zoom__close material-icons p15 cl-bg-tertiary pointer"
+      class="media-zoom__close material-icons p15 pointer"
       @click="$emit('close')"
     >close</i>
     <no-ssr>

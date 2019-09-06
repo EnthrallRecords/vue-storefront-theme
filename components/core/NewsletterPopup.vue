@@ -5,7 +5,7 @@
     </p>
     <div slot="content">
       <form @submit.prevent="subscribe(onSuccesfulSubmission)" novalidate>
-        <div class="mb35">
+        <div class="mb10">
           <p class="h4">
             {{ $t('Stay up to date with the latest') }}
           </p>

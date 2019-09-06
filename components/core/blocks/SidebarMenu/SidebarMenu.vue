@@ -1,7 +1,10 @@
 <template>
   <div class="sidebar-menu fixed mw-100 bg-cl-secondary">
     <div class="row brdr-bottom-1 brdr-cl-bg-secondary">
-      <div class="col-xs bg-cl-primary" v-if="submenu.depth">
+      <div
+        v-if="submenu.depth"
+        class="col-xs bg-cl-primary"
+      >
         <sub-btn type="back" class="bg-cl-transparent brdr-none" />
       </div>
       <div class="col-xs bg-cl-primary">
@@ -15,10 +18,13 @@
         </button>
       </div>
     </div>
-    <div class="row">
+    <div class="sidebar-menu__container row">
       <div class="col-xs-12 h4 serif">
         <ul class="p0 m0 relative sidebar-menu__list" :style="mainListStyles">
-          <li @click="closeMenu" class="brdr-bottom-1 brdr-cl-bg-secondary bg-cl-primary">
+          <li
+            @click="closeMenu"
+            class="brdr-bottom-1 brdr-cl-bg-secondary bg-cl-primary"
+          >
             <router-link
               class="block px25 py20 cl-accent no-underline"
               :to="localizedRoute('/')"
@@ -33,17 +39,20 @@
             @click="closeMenu"
             v-for="category in visibleCategories"
           >
-            <div v-if="isCurrentMenuShowed" class="subcategory-item">
+            <div
+              v-if="isCurrentMenuShowed"
+              class="subcategory-item"
+            >
               <sub-btn
+                v-if="category.children_count > 0"
                 class="bg-cl-transparent brdr-none fs-medium"
                 :id="category.id"
                 :name="category.name"
-                v-if="category.children_count > 0"
               />
               <router-link
                 v-else
                 class="px25 py20 cl-accent no-underline col-xs"
-                :to="localizedRoute({ name: 'category', params: { id: category.id, slug: category.slug }})"
+                :to="localizedRoute({ name: 'category', fullPath: category.url_path, params: { id: category.id, slug: category.slug }})"
               >
                 {{ category.name }}
               </router-link>
@@ -53,9 +62,13 @@
               :category-links="category.children_data"
               :id="category.id"
               :parent-slug="category.slug"
+              :parent-path="category.url_path"
             />
           </li>
-          <li @click="login" class="brdr-bottom-1 brdr-cl-secondary bg-cl-secondary flex">
+          <li
+            @click="login"
+            class="brdr-bottom-1 brdr-cl-secondary bg-cl-secondary flex"
+          >
             <sub-btn
               v-if="currentUser"
               :name="$t('My account')"
@@ -85,7 +98,6 @@
 <script>
 import { mapState } from 'vuex'
 import i18n from '@vue-storefront/i18n'
-
 import SidebarMenu from '@vue-storefront/core/compatibility/components/blocks/SidebarMenu/SidebarMenu'
 import SubBtn from 'theme/components/core/blocks/SidebarMenu/SubBtn'
 import SubCategory from 'theme/components/core/blocks/SidebarMenu/SubCategory'
@@ -118,16 +130,6 @@ export default {
           id: 4,
           name: i18n.t('My orders'),
           url: '/my-account/orders'
-        },
-        {
-          id: 5,
-          name: i18n.t('My loyalty card'),
-          url: '#'
-        },
-        {
-          id: 6,
-          name: i18n.t('My product reviews'),
-          url: '#'
         }
       ],
       componentLoaded: false
@@ -162,6 +164,7 @@ export default {
     login () {
       if (!this.currentUser && this.isCurrentMenuShowed) {
         this.$nextTick(() => {
+          this.$store.commit('ui/setAuthElem', 'login')
           this.$bus.$emit('modal-show', 'modal-signup')
           this.$router.push({ name: 'my-account' })
         })
@@ -187,6 +190,11 @@ $color-heather: color(heather);
 
   @media (max-width: 767px) {
     width: 100vh;
+  }
+
+  &__container {
+    overflow-y: auto;
+    height: calc(100% - 55px);
   }
 
   &__list {

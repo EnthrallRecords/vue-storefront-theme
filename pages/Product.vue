@@ -6,7 +6,6 @@
           <div class="col-xs-12 col-md-6 center-xs middle-xs image">
             <product-gallery
               :gallery="gallery"
-              :offline="offlineImage"
               :configuration="configuration"
               :product="product"
             />
@@ -19,11 +18,13 @@
             />
             <h1 class="mb20 mt0 cl-heather product-name" data-testid="productName" itemprop="name">
               {{ product.name | htmlDecode }}
-              <web-share :title="product.name | htmlDecode" text="Check this product!" class="web-share"/>
+              <web-share :title="product.name | htmlDecode" text="Check this product!" class="web-share" />
             </h1>
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               <meta itemprop="priceCurrency" :content="currentStore.i18n.currencyCode">
               <meta itemprop="price" :content="parseFloat(product.priceInclTax).toFixed(2)">
+              <meta itemprop="availability" :content="structuredData.availability">
+              <meta itemprop="url" :content="product.url_path">
               <div
                 class="mb40 price serif"
                 v-if="product.type_id !== 'grouped'"
@@ -209,8 +210,8 @@
         </div>
       </div>
     </section>
-    <related-products type="related" />
     <promoted-offers single-banner />
+    <related-products type="related" />
   </div>
 </template>
 
@@ -225,7 +226,6 @@ import ColorSelector from 'theme/components/core/ColorSelector.vue'
 import SizeSelector from 'theme/components/core/SizeSelector.vue'
 import Breadcrumbs from 'theme/components/core/Breadcrumbs.vue'
 import ProductAttribute from 'theme/components/core/ProductAttribute.vue'
-import ProductTile from 'theme/components/core/ProductTile.vue'
 import ProductLinks from 'theme/components/core/ProductLinks.vue'
 import ProductCustomOptions from 'theme/components/core/ProductCustomOptions.vue'
 import ProductBundleOptions from 'theme/components/core/ProductBundleOptions.vue'
@@ -247,7 +247,6 @@ export default {
     ProductCustomOptions,
     ProductGallery,
     ProductLinks,
-    ProductTile,
     PromotedOffers,
     RelatedProducts,
     SizeSelector,
@@ -274,6 +273,13 @@ export default {
     }
   },
   directives: { focusClean },
+  computed: {
+    structuredData () {
+      return {
+        availability: (this.product.stock.is_in_stock) ? 'InStock' : 'OutOfStock'
+      }
+    }
+  },
   methods: {
     showDetails (event) {
       this.detailsOpen = true
