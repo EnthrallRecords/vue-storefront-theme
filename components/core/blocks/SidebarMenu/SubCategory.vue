@@ -11,7 +11,7 @@
       >
         <router-link
           class="px25 py20 cl-accent no-underline col-xs"
-          :to="localizedRoute({ name: 'category', fullPath: parentPath, params: { id: id, slug: parentSlug }})"
+          :to="categoryLink({ url_path: parentPath, slug: parentSlug })"
           data-testid="categoryLink"
         >
           {{ $t('View all') }}
@@ -35,7 +35,7 @@
           <router-link
             v-else
             class="px25 py20 cl-accent no-underline col-xs"
-            :to="localizedRoute({ name: 'category', fullPath: link.url_path, params: { id: link.id, slug: link.slug }})"
+            :to="categoryLink(link)"
           >
             {{ link.name }}
           </router-link>
@@ -84,6 +84,7 @@ import { mapState } from 'vuex'
 import SubBtn from './SubBtn.vue'
 import i18n from '@vue-storefront/i18n'
 import config from 'config'
+import { formatCategoryLink } from '@vue-storefront/core/modules/url/helpers'
 
 export default {
   name: 'SubCategory',
@@ -142,9 +143,10 @@ export default {
     }
   },
   methods: {
-    logout () {
-      this.$bus.$emit('user-before-logout')
+    async logout () {
+      await this.$store.dispatch('user/logout', {})
       this.$router.push(this.localizedRoute('/'))
+      this.$store.commit('ui/setSubmenu', { depth: false })
     },
     notify (title) {
       if (title === 'My loyalty card' || title === 'My product reviews') {
@@ -154,22 +156,26 @@ export default {
           action1: { label: i18n.t('OK') }
         })
       }
+    },
+    categoryLink (category) {
+      return formatCategoryLink(category)
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import "~theme/css/animations/transitions";
-@import '~theme/css/variables/colors';
-@import '~theme/css/helpers/functions/color';
-$color-suva: color(suva-gray);
+  @import '~theme/css/variables/colors';
+  @import '~theme/css/helpers/functions/color';
+  $color-suva: color(suva-gray);
+  $color-heather: color(heather);
 
   .sidebar-submenu {
     left: 0;
     top: 0;
     min-height: 100%;
     transform: translateX(-100%);
+
     li {
       &:hover,
       &:focus {
@@ -180,6 +186,9 @@ $color-suva: color(suva-gray);
         &:focus {
           background-color: $color-suva;
         }
+      }
+      a {
+        color: $color-heather;
       }
     }
   }

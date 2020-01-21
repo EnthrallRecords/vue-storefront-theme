@@ -1,11 +1,16 @@
 <template>
   <footer :class="{ 'brdr-top-1 brdr-cl-secondary': isCheckoutPage }">
+    <newsletter class=" flex brdr-bottom-1 brdr-cl-secondary" v-if="!isCheckoutPage" />
     <div
-      class="footer-links flex pt30 px40 bg-cl-secondary"
+      class="footer-links flex pt30 pb60 px40 bg-cl-secondary"
       v-if="!isCheckoutPage"
     >
       <div class="container">
         <div class="row m0 center-xs between-md">
+          <div
+            class="row m0 col-lg-7 col-md-8 col-xs-12 start-md between-md between-xs no-mobile"
+          >
+          </div>
           <div class="row social mt30">
             <a
               class="social-icon mx10 brdr-circle no-underline"
@@ -40,14 +45,16 @@
         </div>
       </div>
     </div>
-    <newsletter class=" flex" v-if="!isCheckoutPage"/>
     <div class="container">
       <div class="row middle-xs px15 bottom-links">
         <div class="col-xs-5 col-sm-3 cl-tertiary">
           <language-switcher v-if="multistoreEnabled" />
         </div>
         <div class="col-xs col-sm-9 end-xs">
-          <ul>
+          <ul class="pl0 links" data-testid="bottomLinks">
+            <li class="footer__version-info">
+              {{ getVersionInfo }}
+            </li>
             <li class="inline-flex">
               <router-link
                 class="cl-tertiary underline"
@@ -72,16 +79,30 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+import { currentStoreView, localizedRoute } from '@vue-storefront/core/lib/multistore'
 import CurrentPage from 'theme/mixins/currentPage'
 import LanguageSwitcher from '../../LanguageSwitcher.vue'
 import Newsletter from 'theme/components/core/blocks/Footer/Newsletter'
 import BackToTop from 'theme/components/core/BackToTop'
+import { getPathForStaticPage } from 'theme/helpers'
 import config from 'config'
 
 export default {
   mixins: [CurrentPage],
   name: 'MainFooter',
+  methods: {
+    goToAccount () {
+      this.$bus.$emit('modal-toggle', 'modal-signup')
+    },
+    getLinkFor (path) {
+      return localizedRoute(getPathForStaticPage(path))
+    }
+  },
   computed: {
+    ...mapGetters({
+      isLogged: 'user/isLoggedIn'
+    }),
     multistoreEnabled () {
       return config.storeViews.multistore
     },

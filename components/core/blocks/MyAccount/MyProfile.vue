@@ -149,7 +149,7 @@
         </a>
       </div>
     </div>
-    
+
     <!-- My profile summary -->
     <div class="row fs16 mb35" v-else>
       <div class="col-xs-12 h4">
@@ -167,6 +167,7 @@
 <script>
 import { required, minLength, email, sameAs } from 'vuelidate/lib/validators'
 import MyProfile from '@vue-storefront/core/compatibility/components/blocks/MyAccount/MyProfile'
+import { unicodeAlpha, unicodeAlphaNum } from '@vue-storefront/core/helpers/validators'
 
 import BaseCheckbox from 'theme/components/core/blocks/Form/BaseCheckbox'
 import BaseSelect from 'theme/components/core/blocks/Form/BaseSelect'
@@ -210,10 +211,12 @@ export default {
     currentUser: {
       firstname: {
         required,
-        minLength: minLength(2)
+        minLength: minLength(2),
+        unicodeAlpha
       },
       lastname: {
-        required
+        required,
+        unicodeAlpha
       },
       email: {
         required,
@@ -238,17 +241,20 @@ export default {
         required
       },
       street: {
-        required
+        required,
+        unicodeAlphaNum
       },
       house: {
-        required
+        required,
+        unicodeAlphaNum
       },
       postcode: {
         required,
         minLength: minLength(3)
       },
       city: {
-        required
+        required,
+        unicodeAlpha
       },
       taxId: {
         required,

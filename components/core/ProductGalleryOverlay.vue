@@ -65,7 +65,7 @@ $z-index-gallery: map-get($z-index, overlay) + 1;
   right: 0;
   bottom: 0;
   z-index: $z-index-gallery;
-  background: #fff;
+  background: #1d2a2b;
 
   &__close {
     position: absolute;

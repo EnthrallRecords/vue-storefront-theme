@@ -1,7 +1,7 @@
 <template>
   <component
-    :is="link ? 'router-link' : 'button'"
-    :to="localizedRoute(link)"
+    :is="compontentType"
+    :to="redirectionLink"
     class="button-outline no-outline py15 bg-cl-transparent h4 no-underline sans-serif fs-medium"
     :class="{
       light : color === 'light', 'brdr-white' : color === 'light', 'cl-white' : color === 'light',
@@ -30,6 +30,14 @@ export default {
       default: null,
       required: false
     }
+  },
+  computed: {
+    compontentType () {
+      return this.link ? 'router-link' : 'button'
+    },
+    redirectionLink () {
+      return this.link ? this.localizedRoute(this.link) : null
+    }
   }
 }
 </script>
@@ -56,9 +64,7 @@ $black: color(black);
   border: 1px solid $dark-border;
   &:hover,
   &:focus {
-    color: $white;
     background: $black;
-    border-color: $black;
   }
 }
 .light {

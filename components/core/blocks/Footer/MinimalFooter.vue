@@ -6,6 +6,10 @@
     >
       <div class="container">
         <div class="row m0 center-xs between-md">
+          <div
+            class="row m0 col-lg-7 col-md-8 col-xs-12 start-md between-md between-xs no-mobile"
+          >
+          </div>
           <div class="row social mt30">
             <a
               class="social-icon mx10 brdr-circle no-underline"

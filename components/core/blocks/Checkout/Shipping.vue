@@ -4,7 +4,7 @@
       <div class="col-xs-1 col-sm-2 col-md-1">
         <div
           class="number-circle lh35 cl-white brdr-circle align-center weight-700"
-          :class="{ 'bg-cl-th-accent' : isActive || isFilled, 'bg-cl-tertiary' : !isFilled && !isActive }"
+          :class="{ 'bg-cl-th-accent' : isActive || isFilled, 'cl-bg-tertiary' : !isFilled && !isActive }"
         >
           2
         </div>
@@ -108,10 +108,16 @@
             v-model.trim="shipping.city"
             @blur="$v.shipping.city.$touch()"
             autocomplete="address-level2"
-            :validations="[{
+            :validations="[
+            {
               condition: $v.shipping.city.$error && !$v.shipping.city.required,
               text: $t('Field is required')
-            }]"
+            },
+            {
+              condition: $v.shipping.city.$error && $v.shipping.city.required,
+              text: $t('Please provide valid city name')
+            }
+            ]"
           />
 
           <base-input

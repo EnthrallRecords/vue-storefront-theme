@@ -4,7 +4,7 @@
       <div class="col-xs-1 col-sm-2 col-md-1">
         <div
           class="number-circle lh35 cl-white brdr-circle align-center weight-700"
-          :class="{ 'bg-cl-th-accent' : isActive || isFilled, 'bg-cl-tertiary' : !isFilled && !isActive }"
+          :class="{ 'bg-cl-th-accent' : isActive || isFilled, 'cl-bg-tertiary' : !isFilled && !isActive }"
         >
           {{ (isVirtualCart ? 2 : 3) }}
         </div>
@@ -117,10 +117,16 @@
             v-model.trim="payment.city"
             @blur="$v.payment.city.$touch()"
             autocomplete="address-level2"
-            :validations="[{
+            :validations="[
+            {
               condition: $v.payment.city.$error && !$v.payment.city.required,
               text: $t('Field is required')
-            }]"
+            },
+            {
+              condition: $v.payment.city.$error && $v.payment.city.required,
+              text: $t('Please provide valid city name')
+            }
+            ]"
           />
 
           <base-input
@@ -167,7 +173,7 @@
             v-model="payment.country"
             autocomplete="country-name"
             @blur="$v.payment.country.$touch()"
-            @change="$v.payment.country.$touch()"
+            @change="$v.payment.country.$touch(); changeCountry();"
           />
 
           <base-input

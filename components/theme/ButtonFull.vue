@@ -1,9 +1,9 @@
 <template>
   <component
-    :is="link ? 'router-link' : 'button'"
+    :is="compontentType"
     :type="!link ? type : false"
-    :to="localizedRoute(link)"
-    class="no-outline button-full block brdr-none w-100 px10 py20 bg-cl-heather :bg-cl-th-secondary ripple weight-400 h4 sans-serif fs-medium"
+    :to="redirectionLink"
+    class="no-outline button-full block brdr-none w-100 px10 py20 cl-black bg-cl-heather :bg-cl-th-secondary ripple weight-400 h4 sans-serif fs-medium"
     :class="{ 'no-underline pointer align-center border-box': link, 'disabled': disabled, 'button-disabled': disabled }"
     data-testid="subscribeSubmit"
     :disabled="disabled"
@@ -34,6 +34,14 @@ export default {
       type: Boolean,
       required: false,
       default: false
+    }
+  },
+  computed: {
+    compontentType () {
+      return this.link ? 'router-link' : 'button'
+    },
+    redirectionLink () {
+      return this.link ? this.localizedRoute(this.link) : null
     }
   }
 }

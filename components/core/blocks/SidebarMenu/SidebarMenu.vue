@@ -18,7 +18,7 @@
         </button>
       </div>
     </div>
-    <div class="sidebar-menu__container row">
+    <div class="sidebar-menu__container row" ref="container">
       <div class="col-xs-12 h4 serif">
         <ul class="p0 m0 relative sidebar-menu__list" :style="mainListStyles">
           <li
@@ -52,7 +52,7 @@
               <router-link
                 v-else
                 class="px25 py20 cl-accent no-underline col-xs"
-                :to="localizedRoute({ name: 'category', fullPath: category.url_path, params: { id: category.id, slug: category.slug }})"
+                :to="categoryLink(category)"
               >
                 {{ category.name }}
               </router-link>
@@ -101,6 +101,8 @@ import i18n from '@vue-storefront/i18n'
 import SidebarMenu from '@vue-storefront/core/compatibility/components/blocks/SidebarMenu/SidebarMenu'
 import SubBtn from 'theme/components/core/blocks/SidebarMenu/SubBtn'
 import SubCategory from 'theme/components/core/blocks/SidebarMenu/SubCategory'
+import { formatCategoryLink } from '@vue-storefront/core/modules/url/helpers'
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 
 export default {
   components: {
@@ -157,8 +159,12 @@ export default {
   },
   mounted () {
     this.$nextTick(() => {
-      this.componentLoaded = true
+      this.componentLoaded = true;
+      disableBodyScroll(this.$refs.container)
     })
+  },
+  destroyed () {
+    clearAllBodyScrollLocks()
   },
   methods: {
     login () {
@@ -169,6 +175,9 @@ export default {
           this.$router.push({ name: 'my-account' })
         })
       }
+    },
+    categoryLink (category) {
+      return formatCategoryLink(category)
     }
   }
 }
@@ -194,6 +203,7 @@ $color-heather: color(heather);
 
   &__container {
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     height: calc(100% - 55px);
   }
 

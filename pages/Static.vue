@@ -2,7 +2,7 @@
   <div>
     <div class="bg-cl-secondary py35 pl20">
       <div class="container">
-        <breadcrumbs :routes="[{name: 'Homepage', route_link: '/'}]" :active-route="$props.title" />
+        <breadcrumbs :with-homepage="true" :routes="[]" :active-route="$props.title" />
         <h2 class="fs-big">
           {{ $props.title }}
         </h2>
@@ -33,7 +33,8 @@
 <script>
 import i18n from '@vue-storefront/i18n'
 import Breadcrumbs from 'theme/components/core/Breadcrumbs'
-import StaticPrivacy from 'theme/components/theme/blocks/Static/Privacy'
+import { getPathForStaticPage } from 'theme/helpers'
+import { localizedRoute } from '@vue-storefront/core/lib/multistore'
 
 export default {
   components: {
@@ -57,14 +58,14 @@ export default {
   },
   computed: {
     activeComponent () {
-      const matchedNav = this.navigation.find(nav => nav.link === this.$route.path)
+      const matchedNav = this.navigation.find(nav => nav.link.includes(this.$route.path))
       return matchedNav ? matchedNav.component : null
     }
   },
   data () {
     return {
       navigation: [
-        { title: i18n.t('Privacy policy'), link: '/privacy', component: StaticPrivacy }
+        {  }
       ]
     }
   }
