@@ -29,17 +29,12 @@ export default {
         {
           image: '/assets/tl/Music.png',
           alt: 'Music',
-          link: '/c/music'
+          link: '/music/music'
         },
         {
           image: '/assets/tl/Merch.png',
           alt: 'Merch',
-          link: '/c/merch'
-        },
-        {
-          image: '/assets/tl/Apparel.png',
-          alt: 'Apparel',
-          link: '/c/apparel'
+          link: '/merch/merch'
         }
       ]
     }

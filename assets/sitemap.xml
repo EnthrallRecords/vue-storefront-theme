@@ -1,126 +1,126 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>https://shop.enthrallrecords.com/</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>1.00</priority>
+<loc>https://shop.enthrallrecords.com/</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>1.00</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/c/music</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://shop.enthrallrecords.com/error</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.80</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/c/merch</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>https://shop.enthrallrecords.com/default-category</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/c/apparel</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>
+https://shop.enthrallrecords.com/music/cds/cds/posers-too-by-posers-cd-31.html
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/privacy</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.80</priority>
+<loc>
+https://shop.enthrallrecords.com/music/vinyl/vinyl/posers-too-by-posers-vinyl-28.html
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/c/default-category</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://shop.enthrallrecords.com/music/tape/tape/crybaby-by-fat-heaven-tape-33.html
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/p/ENTH1901TP/crybaby-by-fat-heaven-tape</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://shop.enthrallrecords.com/music/tape/tape/2020-future-punks-by-aimless-again-tape-32.html
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/p/ENTH1801TP/aimless-again-2020-future-punks-tape</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://shop.enthrallrecords.com/merch/stickers-magnets/stickers-magnets/enthrall-stickermagnet-14.html
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/p/711574803170/posers-too-by-posers-7-vinyl</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://shop.enthrallrecords.com/merch/patches/patches/enthrall-patch-15.html
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/p/ENTH1601CD/posers-too-by-posers-cd</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://shop.enthrallrecords.com/merch/garage/garage/top-banana-trophy-17.html
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/p/STICKMAG-ENTH/enthrall-sticker-magnet</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>
+https://shop.enthrallrecords.com/merch/coasters/coasters/enthrall-coaster-16.html
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.64</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/p/PATCH-ENTH/enthrall-patch</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://shop.enthrallrecords.com/music/music</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.51</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/p/887600957794/top-banana-trophy</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://shop.enthrallrecords.com/music/cds/cds</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.51</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/p/COAST-ENTH/enthrall-coaster</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://shop.enthrallrecords.com/music/vinyl/vinyl</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.51</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/p/T-ENTHB2W/enthrall-balls-to-the-wall-t-shirt/T-ENTHB2W</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.64</priority>
+<loc>https://shop.enthrallrecords.com/music/tape/tape</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.51</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/c/tape</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>https://shop.enthrallrecords.com/merch/merch</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.51</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/c/vinyl</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>
+https://shop.enthrallrecords.com/merch/stickers-magnets/stickers-magnets
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.51</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/c/cds</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>
+https://shop.enthrallrecords.com/merch/patches/patches
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.51</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/c/stickers-magnets</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>
+https://shop.enthrallrecords.com/merch/garage/garage
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.51</priority>
 </url>
 <url>
-  <loc>https://shop.enthrallrecords.com/c/patches</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.51</priority>
+<loc>
+https://shop.enthrallrecords.com/merch/coasters/coasters
+</loc>
+<lastmod>2020-01-25T02:10:35+00:00</lastmod>
+<priority>0.51</priority>
 </url>
-<url>
-  <loc>https://shop.enthrallrecords.com/c/garage</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://shop.enthrallrecords.com/c/coasters</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-<url>
-  <loc>https://shop.enthrallrecords.com/c/tshirts</loc>
-  <lastmod>2019-02-14T07:09:19+00:00</lastmod>
-  <priority>0.51</priority>
-</url>
-
-
 </urlset>
