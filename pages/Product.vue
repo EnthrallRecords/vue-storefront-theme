@@ -1,5 +1,6 @@
 <template>
   <div id="product" itemscope itemtype="http://schema.org/Product">
+    <link itemprop="image" :href="getOfflineImage.src" />
     <section class="bg-cl-secondary px20 product-top-section">
       <div class="container">
         <section class="row m0 between-xs">
