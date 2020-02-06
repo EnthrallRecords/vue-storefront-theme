@@ -30,6 +30,8 @@
       @error="imageLoaded('high', false)"
       class="product-image__thumb"
     >
+    <link itemprop="image" :href="image.loading" />
+    <link itemprop="image" :href="image.src" />
   </div>
 </template>
 

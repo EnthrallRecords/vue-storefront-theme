@@ -27,6 +27,7 @@
                 class="web-share"
               />
             </h1>
+            <meta itemprop="sku" :content="getCurrentProduct.sku">
             <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
               <meta itemprop="priceCurrency" :content="$store.state.storeView.i18n.currencyCode">
               <meta itemprop="price" :content="parseFloat(getCurrentProduct.price_incl_tax).toFixed(2)">
