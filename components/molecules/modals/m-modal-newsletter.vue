@@ -4,8 +4,8 @@
       <form @submit.prevent="subscribeExtend" class="form">
         <SfHeading
           class="sf-heading--left"
-          :title="$t('Newsletter')"
-          :subtitle="$t('Sign up to our newsletter and receive a coupon for 10% off!')"
+          :title="$t('Mailing List')"
+          :subtitle="$t('Subscribe to our mailing list.')"
           :level="3"
         />
         <SfInput
@@ -70,7 +70,7 @@ export default {
       if (isSubscribed) {
         this.$store.dispatch('notification/spawnNotification', {
           type: 'success',
-          message: i18n.t('You have been successfully subscribed to our newsletter!'),
+          message: i18n.t('You have been successfully added to our mailing list!'),
           action1: { label: i18n.t('OK') }
         })
       }

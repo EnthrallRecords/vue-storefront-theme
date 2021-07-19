@@ -1,8 +1,8 @@
 <template>
   <SfCallToAction
     class="o-newsletter"
-    :title="$t('Subscribe to Newsletters')"
-    :description="$t('Be aware of upcoming sales and events. Receive gifts and special offers!')"
+    :title="$t('Get on the list')"
+    :description="$t('Hear about upcoming sales and events.')"
     :image="newsletterImage"
   >
     <template #button>

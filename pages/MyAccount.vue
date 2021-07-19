@@ -23,17 +23,14 @@
         <SfContentPage :title="$t('Loyalty Card')">
           <OMyAccountPlaceholder :title="$t('Loyalty Card')" />
         </SfContentPage>
-        <SfContentPage :title="$t('My newsletter')">
-          <OMyAccountPlaceholder :title="$t('My newsletter')" />
+        <SfContentPage :title="$t('Mailing List')">
+          <OMyAccountPlaceholder :title="$t('Mailing List')" />
         </SfContentPage>
       </SfContentCategory>
       <SfContentPage :title="$t('Log out')" />
       <SfContentCategory :title="$t('Order details')">
         <SfContentPage :title="$t('Order history')">
           <OMyAccountOrdersHistory />
-        </SfContentPage>
-        <SfContentPage :title="$t('My reviews')">
-          <OMyAccountPlaceholder :title="$t('My reviews')" />
         </SfContentPage>
       </SfContentCategory>
     </SfContentPages>
