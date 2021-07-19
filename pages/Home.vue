@@ -34,21 +34,6 @@
     </SfBannerGrid>
 
     <ONewsletter />
-
-    <SfSection :title-heading="$t('Bestsellers')" class="section">
-      <lazy-hydrate :trigger-hydration="!loading">
-        <m-product-carousel :products="newCollection" />
-      </lazy-hydrate>
-    </SfSection>
-
-    <SfSection
-      v-if="isOnline"
-      :title-heading="$t('Share Your Look')"
-      subtitle-heading="#YOURLOOK"
-      class="section"
-    >
-      <AImagesGrid :images="instagramImages" />
-    </SfSection>
   </div>
 </template>
 
