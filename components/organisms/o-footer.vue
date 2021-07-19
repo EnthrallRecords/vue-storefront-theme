@@ -20,16 +20,8 @@
           </SfListItem>
         </SfList>
       </SfFooterColumn>
-      <SfFooterColumn :title="$t('Others')">
+      <SfFooterColumn :title="$t('Info')">
         <SfList>
-          <SfListItem>
-            <router-link to="/legal" exact>
-              <SfMenuItem
-                class="sf-footer__menu-item"
-                :label="$t('Legal notice')"
-              />
-            </router-link>
-          </SfListItem>
           <SfListItem>
             <router-link to="/privacy" exact>
               <SfMenuItem
@@ -50,14 +42,19 @@
           </SfListItem>
         </SfList>
       </SfFooterColumn>
-      <SfFooterColumn :title="$t('Social')" class="social-column">
+      <SfFooterColumn class="social-column">
         <div class="social-icon">
-          <img
+          <a
+            :key="item.name"
+            :href="item.link"
             v-for="item in social"
-            :key="item"
-            :src="'/assets/icons/' + item + '.svg'"
-            class="social-icon__img"
+            class="social-icon__link"
           >
+            <img
+              :src="'/assets/icons/' + item.name + '.svg'"
+              class="social-icon__img"
+            >
+          </a>
         </div>
       </SfFooterColumn>
     </SfFooter>
@@ -85,7 +82,12 @@ export default {
   },
   data () {
     return {
-      social: ['facebook', 'pinterest', 'twitter', 'youtube']
+      social: [
+        {name: 'facebook', link: 'https://www.facebook.com/enthrallrecords'},
+        {name: 'twitter', link: 'https://www.twitter.com/enthrallrecords'},
+        {name: 'instagram', link: 'https://www.instagram.com/enthrallrecords'},
+        {name: 'youtube', link: 'https://www.youtube.com/c/Enthrallrecords/playlists'}
+      ]
     };
   },
   computed: {
@@ -110,31 +112,7 @@ export default {
               ...this.isLoggedIn
                 ? { link: '/my-account' }
                 : { clickHandler: () => this.openModal({ name: ModalList.Auth, payload: 'login' }) }
-            },
-            { name: 'Delivery', link: '/delivery' },
-            { name: 'Return policy', link: '/returns' }
-          ]
-        },
-        help: {
-          name: 'Help',
-          children: [
-            { name: 'Customer service', link: '/customer-service' },
-            { name: 'Size guide', link: '/size-guide' },
-            { name: 'Contact us', link: '/contact' }
-          ]
-        },
-        about: {
-          name: 'About us',
-          children: [
-            {
-              name: 'About us',
-              link: getPathForStaticPage('/about-us')
-            },
-            {
-              name: 'Customer service',
-              link: getPathForStaticPage('/customer-service')
-            },
-            { name: 'Store locator', link: '/store-locator' }
+            }
           ]
         }
       };
@@ -171,11 +149,13 @@ export default {
   @include for-desktop {
     padding: var(--spacer-xs) 0;
   }
-  &__img {
-    height: 1.75rem;
+  &__link {
     &:not(:last-child) {
       margin-right: var(--spacer-base);
     }
+  }
+  &__img {
+    height: 1.75rem;
   }
 }
 </style>
