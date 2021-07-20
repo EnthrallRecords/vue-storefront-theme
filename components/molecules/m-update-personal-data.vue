@@ -41,7 +41,7 @@
       </SfButton>
     </div>
     <p class="notice">
-      {{ $t('At Brand name, we attach great importance to privacy issues and are committed to protecting the personal data of our users. Learn more about how we care and use your personal data in the') }}
+      {{ $t('Your privacy is important and are committed to protecting the personal data of our users. Learn more about how we use your personal data in the') }}
       <a :href="localizedRoute('/privacy')">{{ $t('Privacy Policy') }}</a>.
     </p>
   </div>

@@ -1,9 +1,9 @@
 {
-    "short_name": "VSF Demo",
-    "name": "Vue Storefront",
-    "background_color": "#ffffff",
+    "short_name": "Enthrall Shop",
+    "name": "Enthrall Records Shop",
+    "background_color": "#3f4444",
     "display": "standalone",
-    "theme_color": "#ffffff",
+    "theme_color": "#f38f04",
     "start_url": "/pwa.html",
     "icons": [
       {

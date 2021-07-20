@@ -1,6 +1,6 @@
 export default {
-  title: 'VSF Capybara',
-  titleTemplate: '%s - Vue Storefront',
+  title: 'Enthrall Records Shop',
+  titleTemplate: '%s - Enthrall Records Shop',
   htmlAttrs: {
     lang: 'en'
   },
@@ -10,7 +10,7 @@ export default {
       vmid: 'description',
       name: 'description',
       content:
-        'Vue Storefront is a standalone PWA storefront for your eCommerce, possible to connect with any eCommerce backend (eg. Magento, Prestashop or Shopware) through the API.'
+      'Independent record label based out of Philly specializing in punk. Our main goal is to connect ear holes with good music.'
     },
     {
       name: 'viewport',
@@ -18,8 +18,8 @@ export default {
     },
     { name: 'robots', content: 'index, follow' },
     { name: 'mobile-web-app-capable', content: 'yes' },
-    { name: 'theme-color', content: '#ffffff' },
-    { name: 'apple-mobile-web-app-status-bar-style', content: '#ffffff' }
+    { name: 'theme-color', content: '#f38f04' },
+    { name: 'apple-mobile-web-app-status-bar-style', content: '#f38f04' }
   ],
   link: [
     {
@@ -73,6 +73,7 @@ export default {
     { rel: 'manifest', href: '/assets/manifest.json' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com/', crossorigin: 'anonymous' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com/', crossorigin: 'anonymous' },
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Bitter:wght@100&family=Raleway+Dots&display=swap' },
     { rel: 'preconnect', href: 'https://cdn.jsdelivr.net/', crossorigin: 'anonymous' }
   ],
   script: [

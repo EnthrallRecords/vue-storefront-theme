@@ -1,7 +1,7 @@
 {
-  "name": "@vue-storefront/theme-capybara",
-  "version": "1.0.5",
-  "description": "New theme for Vue Storefront based on Storefront UI",
+  "name": "@enthrallrecords/enthrallrecords",
+  "version": "2.0.0",
+  "description": "theme for Enthrall Records Vue Storefront based on Storefront UI",
   "main": "index.js",
   "scripts": {
     "test:unit": "echo \"No test specified yet\" && exit 0",
