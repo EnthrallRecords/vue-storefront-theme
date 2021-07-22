@@ -33,18 +33,6 @@
           </router-link>
         </SfSection>
       </lazy-hydrate>
-      <lazy-hydrate when-idle>
-        <SfSection :title-heading="$t('Similar Products')">
-          <MRelatedProducts type="related" />
-        </SfSection>
-      </lazy-hydrate>
-      <SfSection
-        v-if="isOnline"
-        title-heading="Share Your Look"
-        subtitle-heading="#YOURLOOK"
-      >
-        <AImagesGrid :images="instagramImages" />
-      </SfSection>
     </div>
   </div>
 </template>

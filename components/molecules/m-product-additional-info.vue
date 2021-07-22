@@ -8,23 +8,6 @@
     <SfTab :title="$t('Description')">
       <div itemprop="description" v-html="product.description" />
     </SfTab>
-    <SfTab :title="$t('Read reviews')" ref="reviewTab">
-      <div class="review-header">
-        <SfHeading
-          :title="$t('{count} Reviews', { count: reviewsCount })"
-          :level="3"
-          class="sf-heading--left"
-        />
-        <AProductRating
-          @click="handleOpenReviewModal"
-          :reviews="reviews"
-        >
-          {{ $t('Leave me review') }}
-        </AProductRating>
-      </div>
-      <SfDivider v-show="reviewsCount" />
-      <MReviewList v-show="reviewsCount" :reviews="reviews" />
-    </SfTab>
     <SfTab v-if="attributes.length" :title="$t('Additional Information')">
       <AProductAttribute
         v-for="(attribute, i) in attributes"
@@ -41,7 +24,6 @@
 import { ModalList } from 'theme/store/ui/modals';
 import { mapState, mapActions } from 'vuex';
 import { SfHeading, SfTabs, SfDivider } from '@storefront-ui/vue';
-import AProductRating from 'theme/components/atoms/a-product-rating';
 import AProductAttribute from 'theme/components/atoms/a-product-attribute';
 import MReviewList from 'theme/components/molecules/m-review-list';
 
@@ -50,7 +32,6 @@ export default {
   components: {
     SfHeading,
     SfTabs,
-    AProductRating,
     SfDivider,
     AProductAttribute,
     MReviewList

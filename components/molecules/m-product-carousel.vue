@@ -13,7 +13,7 @@
         :regular-price="product.price.regular"
         :special-price="product.price.special"
         :max-rating="product.rating.max"
-        :score-rating="product.rating.score"
+        :score-rating="false"
         :link="product.link"
         :wishlist-icon="false"
         link-tag="router-link"

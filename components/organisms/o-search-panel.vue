@@ -34,7 +34,7 @@
             :regular-price="product.price.regular"
             :special-price="product.price.special"
             :max-rating="product.rating.max"
-            :score-rating="product.rating.score"
+            :score-rating="false"
             :link="product.link"
             link-tag="router-link"
             :wishlist-icon="false"
@@ -165,7 +165,7 @@ export default {
   left: 0;
   right: 0;
   top: var(--_header-height);
-  background: var(--c-white);
+  background: var(--bg-primary);
   overflow: auto;
   max-height: calc(66vh - var(--_header-height));
 
