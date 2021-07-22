@@ -7,7 +7,6 @@
       <SfMegaMenuColumn
         v-for="category in categories"
         :key="category.id"
-        :title="category.name"
       >
         <SfList>
           <SfListItem
@@ -117,6 +116,9 @@ export default {
   transition: 0.2s;
   .router-link-exact-active {
     --menu-item-font-weight: bold;
+  }
+  .sf-mega-menu {
+    --mega-menu-content-padding: 0;
   }
 }
 .aside-menu {
