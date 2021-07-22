@@ -56,13 +56,6 @@
           <OMyAccountOrderDetails :order="activeOrder" @close="setActiveOrder(null)" />
         </template>
       </SfTab>
-      <SfTab :title="$t('Returns')">
-        <p class="message">
-          {{ $t('This feature is not implemented yet! Please take a look at') }}
-          <a href="https://github.com/DivanteLtd/vue-storefront"> https://github.com/DivanteLtd/vue-storefront </a>
-          {{ $t('for our Roadmap!') }}
-        </p>
-      </SfTab>
     </SfTabs>
   </div>
 </template>

@@ -48,3 +48,13 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.m-product-carousel {
+  .sf-arrow{
+    &--long {
+      --button-background: var(--bg-primary);
+    }
+  }
+}
+</style>

@@ -7,6 +7,7 @@
     --font-family-primary: "Raleway Dots", cursive;
     --font-family-secondary: "Special Elite", serif;
 
+    /* Background colors */
     --bg-primary: #3f4444;
     background-color: var(--bg-primary);
     --header-background: var(--bg-primary);
@@ -14,14 +15,17 @@
     --modal-background: var(--bg-primary);
     --mega-menu-background: var(--bg-primary);
     --product-card-background: var(--bg-primary);
+    --select-dropdown-background: var(--bg-primary);
 
     /* Theme color variables */
     // Body and text defaults
     --c-body: var(--_c-dark-secondary);
     --c-text: var(--_c-light-primary);
-    --c-text-muted: var(--_c-gray-primary);
-    --c-text-disabled: var(--_c-gray-accent);
+    --c-text-muted: var(--_c-gray-secondary-lighten);
+    --c-text-disabled: var(--_c-gray-primary);      
+    strong { color: var(--_c-gray-accent); }
     --c-link: var(--_c-light-secondary);
+    --link-color: var(--c-link);
     --c-link-hover: var(--c-black);
     --input-label-color: var(--c-text);
 

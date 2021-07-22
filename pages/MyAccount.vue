@@ -20,12 +20,6 @@
         <SfContentPage :title="$t('Shipping details')">
           <OMyAccountShippingDetails />
         </SfContentPage>
-        <SfContentPage :title="$t('Loyalty Card')">
-          <OMyAccountPlaceholder :title="$t('Loyalty Card')" />
-        </SfContentPage>
-        <SfContentPage :title="$t('Mailing List')">
-          <OMyAccountPlaceholder :title="$t('Mailing List')" />
-        </SfContentPage>
       </SfContentCategory>
       <SfContentPage :title="$t('Log out')" />
       <SfContentCategory :title="$t('Order details')">
@@ -109,6 +103,9 @@ export default {
     .sf-content-pages__content,
     .sf-content-pages__sidebar {
       height: min-content;
+    }
+    .sf-content-pages__sidebar {
+      background: var(--_c-gray-primary-darken);
     }
   }
   @include for-mobile {
