@@ -206,21 +206,6 @@
           class="sf-heading--left sf-heading--no-underline summary__title"
         />
         <MPriceSummary class="summary__total" />
-        <SfCheckbox
-          v-model="orderReview.terms"
-          class="summary__terms"
-          name="acceptConditions"
-          @blur="$v.orderReview.terms.$touch()"
-        >
-          <template #label>
-            <span class="sf-checkbox__label no-flex">
-              {{ $t("I accept ") }}
-            </span>
-            <SfButton class="sf-button sf-button--text summary__terms--link" @click.prevent="openTermsAndConditionsModal">
-              {{ $t("Terms and conditions") }}
-            </SfButton>
-          </template>
-        </SfCheckbox>
       </div>
     </div>
     <APromoCode class="mobile-only" :allow-promo-code-removal="false" />
@@ -237,21 +222,6 @@
     </div>
     <div class="totals desktop-only">
       <div class="totals__element">
-        <SfCheckbox
-          v-model="orderReview.terms"
-          class="totals__terms"
-          name="acceptConditions"
-          @blur="$v.orderReview.terms.$touch()"
-        >
-          <template #label>
-            <span class="sf-checkbox__label no-flex">
-              {{ $t("I accept ") }}
-            </span>
-            <SfButton class="sf-button sf-button--text totals__terms--link" @click.prevent="openTermsAndConditionsModal">
-              {{ $t("Terms and conditions") }}
-            </SfButton>
-          </template>
-        </SfCheckbox>
         <APromoCode :allow-promo-code-removal="false" />
       </div>
       <MPriceSummary class="totals__element" />
@@ -406,9 +376,6 @@ export default {
         message: this.$t(response.result),
         action1: { label: this.$t('OK') }
       });
-    },
-    openTermsAndConditionsModal () {
-      this.openModal({ name: ModalList.TermsAndConditions })
     }
   },
   mounted () {
