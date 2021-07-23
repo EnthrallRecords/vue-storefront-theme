@@ -10,7 +10,6 @@ import { UserModule } from '@vue-storefront/core/modules/user'
 import { CmsModule } from '@vue-storefront/core/modules/cms'
 import { NewsletterModule } from '@vue-storefront/core/modules/newsletter'
 import { PaymentBackendMethodsModule } from 'src/modules/payment-backend-methods'
-import { PaymentCashOnDeliveryModule } from 'src/modules/payment-cash-on-delivery'
 
 import { registerModule } from '@vue-storefront/core/lib/modules'
 
@@ -21,7 +20,6 @@ export function registerClientModules () {
   registerModule(CheckoutModule) // To Checkout
   registerModule(CartModule)
   registerModule(PaymentBackendMethodsModule)
-  registerModule(PaymentCashOnDeliveryModule)
   registerModule(NotificationModule)
   registerModule(UserModule) // Trigger on user icon click
   registerModule(CatalogNextModule)
