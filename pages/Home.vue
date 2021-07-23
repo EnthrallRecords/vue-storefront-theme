@@ -25,7 +25,6 @@
           <SfBanner
             :subtitle="banner.subtitle"
             :title="banner.title"
-            :description="banner.description"
             :image="banner.image"
           />
         </router-link>
@@ -147,6 +146,7 @@ export default {
   height: initial;
 }
 .banner-grid {
+  --banner-title-color: var(--c-primary);
   margin: var(--spacer-base) 0;
   @include for-desktop {
     margin: var(--spacer-2xl) 0;
