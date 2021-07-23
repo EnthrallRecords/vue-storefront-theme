@@ -46,40 +46,12 @@
           {{ $t('To finish the order just come back to our store while online. Your order will be sent to the server as soon as you come back here while online and then confirmed regarding the stock quantities of selected items') }}
         </p>
       </template>
-      <SfButton
-        v-if="!isPermissionGranted && isNotificationSupported"
-        class="wrapper__notifications-button"
-        @click.native="requestNotificationPermission()"
-      >
-        {{ $t('Allow order notifications') }}
-      </SfButton>
-      <SfHeading
-        :title="$t('What we can improve?')"
-        :level="3"
-        class="sf-heading--left"
-      />
-      <p class="paragraph">
-        {{ $t('Your feedback is important for us. Let us know what we could improve.') }}
-      </p>
-      <textarea
-        class="feedback"
-        v-model="feedback"
-        :placeholder="$t('Type your opinion')"
-      />
-      <div class="wrapper__buttons">
-        <SfButton
-          class="color-secondary sf-button--full-width"
-          @click="sendFeedback"
-        >
-          {{ $t('Send my feedback') }}
-        </SfButton>
         <SfButton
           class="sf-button--outline sf-button--full-width"
           @click="$router.push(localizedRoute('/'))"
         >
           {{ $t('Back to shop') }}
         </SfButton>
-      </div>
     </div>
   </div>
 </template>
@@ -186,7 +158,7 @@ export default {
   }
 }
 .banner {
-  background-color: #f1f2f3;
+  background-color: var(--_c-gray-primary);
   &__info {
     padding: 2rem;
     text-align: left;
@@ -232,6 +204,7 @@ export default {
 .paragraph {
   line-height: 1.875rem;
   font-size: var(--font-lg);
+  color: var(--c-text);
 }
 .feedback {
   box-sizing: border-box;

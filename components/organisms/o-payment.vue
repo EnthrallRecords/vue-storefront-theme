@@ -47,7 +47,7 @@
         v-model.trim="payment.streetAddress"
         class="form__element"
         name="street-address"
-        :label="$t('Street name')"
+        :label="$t('Street address')"
         required
         :valid="!$v.payment.streetAddress.$error"
         :error-message="$t('Field is required')"
@@ -57,10 +57,7 @@
         v-model.trim="payment.apartmentNumber"
         class="form__element"
         name="apartment-number"
-        :label="$t('House/Apartment number')"
-        required
-        :valid="!$v.payment.apartmentNumber.$error"
-        :error-message="$t('Field is required')"
+        :label="$t('Address line 2')"
         @blur="$v.payment.apartmentNumber.$touch()"
       />
       <SfInput
@@ -240,7 +237,6 @@ export default {
         unicodeAlphaNum
       },
       apartmentNumber: {
-        required,
         unicodeAlphaNum
       },
       zipCode: {
