@@ -23,7 +23,7 @@
       <SfFooterColumn :title="$t('Info')">
         <SfList>
           <SfListItem>
-            <router-link to="/privacy" exact>
+            <router-link to="https://www.enthrallrecords.com/privacy-policy/" exact>
               <SfMenuItem
                 class="sf-footer__menu-item"
                 :label="$t('Privacy policy')"

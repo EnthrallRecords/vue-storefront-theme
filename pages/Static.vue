@@ -44,7 +44,7 @@ export default {
   data () {
     return {
       navigation: [
-        { title: i18n.t('Privacy policy'), link: '/privacy' }
+        { title: i18n.t('Privacy policy'), link: 'https://www.enthrallrecords.com/privacy-policy/' }
       ]
     };
   },

@@ -37,7 +37,7 @@ export default {
     },
     detailsLink: {
       type: String,
-      default: '/privacy'
+      default: 'https://www.enthrallrecords.com/privacy-policy/'
     },
     message: {
       type: String,

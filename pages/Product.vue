@@ -89,7 +89,6 @@ export default {
       attributesByCode: 'attribute/attributeListByCode',
       getCurrentCustomOptions: 'product/getCurrentCustomOptions',
       promotedOffers: 'promoted/getPromotedOffers',
-      dummyInstagramImages: 'instagram/getInstagramImages',
       getBreadcrumbsRoutes: 'breadcrumbs/getBreadcrumbsRoutes',
       getBreadcrumbsCurrent: 'breadcrumbs/getBreadcrumbsCurrent'
     }),
@@ -125,9 +124,6 @@ export default {
     },
     banners () {
       return checkWebpSupport(this.promotedOffers.productBanners, this.isWebpSupported)
-    },
-    instagramImages () {
-      return checkWebpSupport(this.dummyInstagramImages, this.isWebpSupported)
     }
   },
   watch: {
@@ -160,8 +156,7 @@ export default {
   },
   async mounted () {
     await Promise.all([
-      this.$store.dispatch('review/list', { productId: this.getOriginalProduct.id }),
-      this.$store.dispatch('instagram/updateInstagramImages')
+      this.$store.dispatch('review/list', { productId: this.getOriginalProduct.id })
     ])
   },
   beforeRouteEnter (to, from, next) {
