@@ -82,7 +82,7 @@ export default {
           const category = this.getCategories.find(category => category.id === id)
           const viewAllMenuItem = prepareCategoryMenuItem({
             ...category,
-            name: this.$t('View all'),
+            name: categort.name,
             position: 0
           });
 
