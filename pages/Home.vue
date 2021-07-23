@@ -26,7 +26,6 @@
             :subtitle="banner.subtitle"
             :title="banner.title"
             :description="banner.description"
-            :button-text="banner.buttonText"
             :image="banner.image"
           />
         </router-link>
@@ -81,7 +80,6 @@ export default {
       heroImages: 'promoted/getHeadImage',
       promotedOffers: 'promoted/getPromotedOffers',
       newCollection: 'homepage/getEverythingNewCollection',
-      dummyInstagramImages: 'instagram/getInstagramImages'
     }),
     isOnline () {
       return onlineHelper.isOnline;
@@ -91,9 +89,6 @@ export default {
     },
     heroes () {
       return checkWebpSupport(this.heroImages, this.isWebpSupported)
-    },
-    instagramImages () {
-      return checkWebpSupport(this.dummyInstagramImages, this.isWebpSupported)
     }
   },
   watch: {
@@ -109,8 +104,7 @@ export default {
 
     await Promise.all([
       store.dispatch('homepage/fetchNewCollection'),
-      store.dispatch('promoted/updateHeadImage'),
-      store.dispatch('instagram/updateInstagramImages')
+      store.dispatch('promoted/updateHeadImage')
     ]);
   },
   mounted () {

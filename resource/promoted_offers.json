@@ -1,5 +1,35 @@
 {
   "mainBanners": [
+    {
+      "title": "MUSIC",
+      "description": "All the stuff worth injecting in your ear holes.",
+      "image": {
+        "webp": "/assets/banner/webp/bannerMusic.webp",
+        "fallback": "/assets/banner/png/bannerMusic.png"
+      },
+      "link": "/music/music",
+      "slot": "banner-A"
+    },
+    {
+      "title": "MERCH",
+      "description": "A bunch of stuff that can be put on shit.",
+      "image": {
+        "webp": "/assets/banner/webp/bannerMerch.webp",
+        "fallback": "/assets/banner/png/bannerMerch.png"
+      },
+      "link": "/merch/merch",
+      "slot": "banner-B"
+    },
+    {
+      "title": "TAPES",
+      "description": "Small form factor, analog audio, something worth listening to.",
+      "image": {
+        "webp": "/assets/banner/webp/bannerCassette.webp",
+        "fallback": "/assets/banner/png/bannerCasette.png"
+      },
+      "link": "/music/tape/tape",
+      "slot": "banner-D"
+    }
   ],
   "productBanners": [
   ],
