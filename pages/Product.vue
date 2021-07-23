@@ -17,11 +17,6 @@
     />
     <div class="product__bottom">
       <lazy-hydrate when-idle>
-        <SfSection :title-heading="$t('We found other products you might like')">
-          <MRelatedProducts type="upsell" />
-        </SfSection>
-      </lazy-hydrate>
-      <lazy-hydrate when-idle>
         <SfSection v-show="banners.length">
           <router-link :key="i" :to="banner.link" v-for="(banner, i) in banners">
             <SfBanner
