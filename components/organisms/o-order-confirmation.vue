@@ -203,7 +203,7 @@ export default {
 }
 .paragraph {
   line-height: 1.875rem;
-  font-size: var(--font-lg);
+  font-size: var(--font-size--lg);
   color: var(--c-text);
 }
 .feedback {
@@ -212,7 +212,7 @@ export default {
   width: 100%;
   height: 25vh;
   padding: 0.5em;
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family--primary);
   resize: vertical;
 }
 </style>

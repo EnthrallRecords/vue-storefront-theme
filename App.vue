@@ -34,7 +34,7 @@ body {
   --bottom-navigation-height: 3.75rem;
   --bar-height: 3.125rem;
   --notification-font-size: var(--font-sm);
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family--secondary);
   margin: 0;
   padding: 0;
   a {

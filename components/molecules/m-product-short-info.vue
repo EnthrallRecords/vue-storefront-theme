@@ -10,7 +10,7 @@
         icon="drag"
         size="xl"
         color="gray-secondary"
-        class="product__drag-icon mobile-only"
+        class="product__drag-icon smartphone-only"
       />
     </div>
     <div class="product__price-and-rating">
@@ -101,7 +101,7 @@ export default {
       var(--font-light),
       var(--font-base),
       1.6,
-      var(--font-family-primary)
+      var(--font-family--primary)
     );
   }
 }

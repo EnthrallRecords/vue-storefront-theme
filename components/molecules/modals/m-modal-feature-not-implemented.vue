@@ -38,7 +38,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .message {
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family--primary);
   line-height: 1.6;
 }
 </style>

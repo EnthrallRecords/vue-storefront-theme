@@ -70,7 +70,7 @@
           />
           <SfHeading
             :title="$t('Your bag is empty')"
-            :subtitle="$t('Looks like you haven’t added any items to the bag yet. Start shopping to fill it in.')"
+            :description="$t('Looks like you haven’t added any items to the bag yet. Start shopping to fill it in.')"
             :level="2"
             class="empty-cart__heading"
           />
@@ -233,13 +233,13 @@ export default {
     margin: 0;
   }
   &__total-price {
-    --price-font-size: var(--font-sm);
+    --price-font-size: var(--font-size--sm);
     --price-font-weight: var(--font-semibold);
     margin: 0 0 var(--spacer-xs) 0;
   }
 }
 .empty-cart {
-  --heading-subtitle-margin: 0 0 var(--spacer-xl) 0;
+  --heading-description-margin: 0 0 var(--spacer-xl) 0;
   --heading-title-margin: 0 0 var(--spacer-base) 0;
   --heading-title-color: var(--c-primary);
   --heading-title-font-weight: var(--font-semibold);
@@ -262,7 +262,7 @@ export default {
     margin: 0 0 var(--spacer-2xl) 0;
   }
   @include for-desktop {
-    --heading-title-font-size: var(--font-xl);
+    --heading-title-font-size: var(--font-size--xl);
   }
 }
 .collected-product-list {
@@ -283,6 +283,7 @@ export default {
   }
   &:hover {
     --cp-actions-opacity: 1;
+    --collected-product-background: inherit;
   }
 }
 </style>

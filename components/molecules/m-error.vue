@@ -4,7 +4,7 @@
       src="/assets/error.svg"
       class="error__image"
     />
-    <SfHeading :level="level" :title="title" :subtitle="subtitle" class="error__message" />
+    <SfHeading :level="level" :title="title" :description="subtitle" class="error__message" />
     <div class="error__action">
       <a :href="localizedRoute('/')">
         <SfButton class="sf-button--full-width error__action-button">

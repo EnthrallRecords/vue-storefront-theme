@@ -43,7 +43,7 @@
           <OSearch :class="{'desktop-only': !isSearchPanelVisible}" />
           <SfButton
             v-if="isSearchPanelVisible"
-            class="sf-button--text form__action-button form__action-button--secondary mobile-only"
+            class="sf-button--text form__action-button form__action-button--secondary smartphone-only"
             @click="$store.commit('ui/setSearchpanel', false)"
           >
             {{ $t("Cancel") }}

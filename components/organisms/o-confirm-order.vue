@@ -5,7 +5,7 @@
       :level="2"
       class="sf-heading--left sf-heading--no-underline title"
     />
-    <SfAccordion :open="$t('Details')" class="accordion mobile-only">
+    <SfAccordion :open="$t('Details')" class="accordion smartphone-only">
       <SfAccordionItem :header="$t('Details')">
         <div class="accordion__item">
           <div class="accordion__content">
@@ -198,7 +198,7 @@
         </SfTableData>
       </SfTableRow>
     </SfTable>
-    <div class="summary mobile-only">
+    <div class="summary smartphone-only">
       <div class="summary__content">
         <SfHeading
           :title="$t('Totals')"
@@ -208,8 +208,8 @@
         <MPriceSummary class="summary__total" />
       </div>
     </div>
-    <APromoCode class="mobile-only" :allow-promo-code-removal="false" />
-    <div class="characteristics mobile-only">
+    <APromoCode class="smartphone-only" :allow-promo-code-removal="false" />
+    <div class="characteristics smartphone-only">
       <SfCharacteristic
         v-for="characteristic in characteristics"
         :key="characteristic.title"
@@ -562,7 +562,7 @@ a {
   flex: unset;
 }
 .promo-code {
-  &.mobile-only {
+  &.smartphone-only {
     max-width: 100%;
     width: 20rem;
   }

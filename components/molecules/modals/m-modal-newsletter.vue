@@ -5,7 +5,7 @@
         <SfHeading
           class="sf-heading--left"
           :title="$t('Mailing List')"
-          :subtitle="$t('Subscribe to our mailing list.')"
+          :description="$t('Subscribe to our mailing list.')"
           :level="3"
         />
         <SfInput

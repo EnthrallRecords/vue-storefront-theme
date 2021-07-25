@@ -4,7 +4,7 @@
       <SfHeading
         class="sf-heading--left"
         :title="$t('Confirm your order')"
-        :subtitle="$t('Please confirm order you placed when you was offline')"
+        :description="$t('Please confirm order you placed when you was offline')"
         :level="3"
       />
       <div v-for="(order, key) in modalData.payload" :key="key" class="order-confirmation__order">
@@ -125,7 +125,7 @@ export default {
   }
   &__product-details {
     margin-top: var(--spacer-sm);
-    font-size: var(--font-xs);
+    font-size: var(--font-size--xs);
   }
   &__buttons {
     display: flex;

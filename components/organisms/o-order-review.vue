@@ -172,8 +172,8 @@ export default {
   }
 }
 .content {
-  font-family: var(--font-family-primary);
-  font-size: var(--font-xs);
+  font-family: var(--font-family--primary);
+  font-size: var(--font-size--xs);
   line-height: 1.6;
   font-weight: var(--font-light);
   margin: 0;

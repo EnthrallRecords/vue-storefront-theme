@@ -8,7 +8,7 @@
       size="xs"
       class="sf-header__icon"
       :class="{
-        'sf-header__icon--is-active': isLoggedIn
+        'sf-header__icon.is-active': isLoggedIn
       }"
     />
   </SfButton>

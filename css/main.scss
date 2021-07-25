@@ -4,8 +4,10 @@
     button {
         color: var(--c-text);
     }
-    --font-family-primary: "Raleway Dots", cursive;
-    --font-family-secondary: "Special Elite", serif;
+    --font-family--primary: "Raleway Dots", cursive;
+    --font-family--secondary: "Special Elite", serif;
+    --font-2xs: 0.625rem
+    --font-size--xl: 1.5rem	
 
     /* Background colors */
     --bg-primary: #3f4444;
@@ -16,6 +18,7 @@
     --mega-menu-background: var(--bg-primary);
     --product-card-background: var(--bg-primary);
     --select-dropdown-background: var(--bg-primary);
+    --collected-product-image-background: var(--bg-primary);
 
     /* Theme color variables */
     // Body and text defaults

@@ -129,6 +129,14 @@ export default {
 };
 </script>
 
+<style lang="scss">
+.sf-footer-column {
+  background: var(--footer-background);
+  &__title {
+    background: var(--footer-background);
+  }
+}
+</style>
 <style lang="scss" scoped>
 @import "~@storefront-ui/shared/styles/helpers/breakpoints";
 
@@ -138,7 +146,16 @@ export default {
     margin: auto;
   }
   .sf-footer {
+    background: var(--footer-background);
     --footer-width: auto;
+    .sf-footer-column {
+      background: var(--footer-background);
+      ::v-deep {
+        .sf-footer-column__title {
+          background: var(--footer-background);
+        }
+      }
+    }
   }
 }
 .social-column {

@@ -46,7 +46,7 @@
             </SfSelectOption>
           </SfSelect>
           <SfButton
-            class="sf-button--text navbar__filters-button sort-by__button mobile-only"
+            class="sf-button--text navbar__filters-button sort-by__button smartphone-only"
             @click="$refs.SortBy.toggle()"
           >
             {{ $t('Sort By') }}
@@ -58,7 +58,7 @@
             {{ $t("Products found") }}:
           </span>
           <strong class="desktop-only">{{ getCategoryProductsTotal }}</strong>
-          <span class="navbar__label mobile-only">
+          <span class="navbar__label smartphone-only">
             {{ $t("{count} items", { count: getCategoryProductsTotal }) }}
           </span>
         </div>
@@ -86,7 +86,7 @@
         <SfHeading
           v-if="isCategoryEmpty"
           :title="$t('No products found!')"
-          :subtitle="
+          :description="
             $t(
               'Please change Your search criteria and try again. If still not finding anything relevant, please visit the Home page and try out some of our bestsellers!'
             )
@@ -661,7 +661,7 @@ export default {
     }
     @include for-mobile {
       --button-text-transform: uppercase;
-      font-size: var(--font-xs);
+      font-size: var(--font-size--xs);
       &.sort-by__button {
         order: 1;
       }
@@ -675,12 +675,12 @@ export default {
     margin: 0 var(--spacer-sm) 0 0;
   }
   &__label {
-    font-family: var(--font-family-secondary);
+    font-family: var(--font-family--secondary);
     font-weight: var(--font-normal);
     color: var(--c-text-muted);
     margin: 0 var(--spacer-2xs) 0 0;
     @include for-mobile {
-      font-size: var(--font-xs);
+      font-size: var(--font-size--xs);
     }
   }
   &__select {
@@ -698,7 +698,7 @@ export default {
     }
   }
   &__counter {
-    font-family: var(--font-family-secondary);
+    font-family: var(--font-family--secondary);
     grid-column: 3;
     justify-self: end;
     grid-area: counter;
@@ -715,7 +715,7 @@ export default {
     }
     &-label {
       margin: 0 var(--spacer-sm) 0 0;
-      font: var(--font-medium) var(--font-xs) / 1.6 var(--font-family-secondary);
+      font: var(--font-medium) var(--font-size--xs) / 1.6 var(--font-family--secondary);
       text-decoration: underline;
     }
   }
@@ -727,6 +727,7 @@ export default {
   ::v-deep {
     .sf-select__dropdown {
       min-width: max-content;
+      background: var(--select-dropdown-background);
     }
     .sf-select-option {
       cursor: pointer;
@@ -765,7 +766,7 @@ export default {
   }
 }
 .list {
-  --menu-item-font-size: var(--font-sm);
+  --menu-item-font-size: var(--font-size--sm);
   &__item {
     &:not(:last-of-type) {
       --list-item-margin: 0 0 var(--spacer-sm) 0;
@@ -819,7 +820,7 @@ export default {
 }
 .filters {
   &__title {
-    --heading-title-font-size: var(--font-xl);
+    --heading-title-font-size: var(--font-size--xl);
     margin: var(--spacer-xl) 0 var(--spacer-base) 0;
     &:first-child {
       margin: calc(var(--spacer-xl) + var(--spacer-base)) 0 var(--spacer-xs) 0;

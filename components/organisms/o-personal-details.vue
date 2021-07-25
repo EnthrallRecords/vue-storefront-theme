@@ -143,7 +143,7 @@
         </SfButton>
         <SfButton
           v-if="!currentUser"
-          class="sf-button--full-width sf-button--text form__action-button form__action-button--secondary mobile-only"
+          class="sf-button--full-width sf-button--text form__action-button form__action-button--secondary smartphone-only"
           @click="login"
         >
           {{ $t("or login to your account") }}
@@ -256,10 +256,10 @@ export default {
   &__info {
     margin: var(--spacer-lg) 0;
     color: var(--c-dark-variant);
-    font: var(--font-light) var(--font-base) / 1.6 var(--font-family-primary);
+    font: var(--font-light) var(--font-base) / 1.6 var(--font-family--primary);
     @include for-desktop {
       font-weight: var(--font-normal);
-      font-size: var(--font-sm);
+      font-size: var(--font-size--sm);
     }
   }
   &__button {
@@ -270,7 +270,7 @@ export default {
   margin: 0 0 var(--spacer-xl) 0;
   flex: 1;
   &__heading {
-    font-family: var(--font-family-primary);
+    font-family: var(--font-family--primary);
     font-weight: var(--font-light);
   }
   &__characteristic {
@@ -281,7 +281,7 @@ export default {
     margin: 0;
     &__heading {
       margin: 0 0 var(--spacer-sm) 0;
-      font-size: var(--font-xs);
+      font-size: var(--font-size--xs);
     }
     &__characteristic {
       margin: var(--spacer-base) 0;
@@ -305,9 +305,9 @@ export default {
   }
   @include for-mobile {
     &__checkbox {
-      --checkbox-font-family: var(--font-family-primary);
+      --checkbox-font-family: var(--font-family--primary);
       --checkbox-font-weight: var(--font-light);
-      --checkbox-font-size: var(--font-sm);
+      --checkbox-font-size: var(--font-size--sm);
     }
   }
   @include for-desktop {
