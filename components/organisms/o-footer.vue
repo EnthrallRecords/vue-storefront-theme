@@ -37,9 +37,6 @@
               :label="currentLanguage"
             />
           </SfListItem>
-          <SfListItem class="sf-footer__menu-item">
-            {{ getVersionInfo }}
-          </SfListItem>
         </SfList>
       </SfFooterColumn>
       <SfFooterColumn class="social-column">
