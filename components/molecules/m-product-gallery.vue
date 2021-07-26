@@ -75,5 +75,10 @@ export default {
 <style lang="scss" scoped>
 .m-product-gallery {
   flex: 1;
+  ::v-deep {
+    .sf-image {
+      --image-height: auto;
+    }
+  }
 }
 </style>
