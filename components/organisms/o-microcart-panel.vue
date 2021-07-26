@@ -93,7 +93,7 @@
             </template>
           </SfProperty>
           <SfButton
-            class="sf-button--full-width color-secondary"
+            class="sf-button--full-width"
             @click.native="goToCheckout"
           >
             {{ $t("Go to checkout") }}
@@ -267,6 +267,11 @@ export default {
 }
 .collected-product-list {
   flex: 1;
+  ::v-deep {
+    .sf-collected-product__image {
+      mix-blend-mode: soft-light;
+    }
+  }
 }
 .collected-product {
   --collected-product-image-background: var(--c-white);
