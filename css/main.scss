@@ -26,7 +26,8 @@
     --c-body: var(--_c-dark-secondary);
     --c-text: var(--_c-light-primary);
     --c-text-muted: var(--_c-gray-secondary-lighten);
-    --c-text-disabled: var(--_c-gray-primary);      
+    --c-text-disabled: var(--_c-gray-primary);
+    --c-highlight: var(--_c-sunset-primary)
     strong { color: var(--_c-gray-accent); }
     --c-link: var(--_c-light-secondary);
     --link-color: var(--c-link);
@@ -39,6 +40,7 @@
     /* Should be used to drive attention to the main tasks that should be done while using the app.
     * It is meant to be used in major interactive elements of the page. */
     @include generate-color-variants(--_c-orange-primary, #f38f04);
+    @include generate-color-variants(--_c-sunset-primary, #EC4C4C);
     @include assign-color-variants(--c-primary, --_c-orange-primary);
     --c-primary-variant: var(--_c-orange-secondary);
     --c-on-primary: var(--_c-dark-secondary);

@@ -175,18 +175,6 @@ export default {
         {
           description: this.$t('Faster checkout'),
           icon: 'clock'
-        },
-        {
-          description: this.$t('Full rewards program benefits'),
-          icon: 'rewards'
-        },
-        {
-          description: this.$t('Earn credits with every purchase'),
-          icon: 'credits'
-        },
-        {
-          description: this.$t('Manage your wishlist'),
-          icon: 'heart'
         }
       ]
     };
@@ -277,6 +265,7 @@ export default {
   &__characteristic {
     --characteristic-description-font-size: var(--font-xs);
     margin: 0 0 var(--spacer-sm) var(--spacer-2xs);
+    color: var(--c-sunset-primary);
   }
   @include for-desktop {
     margin: 0;
