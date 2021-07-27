@@ -272,6 +272,7 @@ export default {
   &__heading {
     font-family: var(--font-family--primary);
     font-weight: var(--font-light);
+    color: var(--c-text);
   }
   &__characteristic {
     --characteristic-description-font-size: var(--font-xs);

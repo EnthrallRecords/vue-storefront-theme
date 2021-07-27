@@ -269,7 +269,7 @@ export default {
   flex: 1;
   ::v-deep {
     .sf-collected-product__image {
-      mix-blend-mode: soft-light;
+      mix-blend-mode: normal;
     }
   }
 }

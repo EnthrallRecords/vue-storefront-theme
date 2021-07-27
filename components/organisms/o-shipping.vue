@@ -285,6 +285,15 @@ export default {
     &__radio-group {
       margin: 0 calc(var(--spacer-sm) * -1);
     }
+    ::v-deep {
+      .sf-select__dropdown {
+        height: auto;
+        padding: var(--input-padding, var(--spacer-sm) 0 var(--spacer-xs) 0);
+        background: var(--input-background);
+        font-size: var(--input-font-size, var(--font-size--lg))/var(--input-font-line-height, 1);
+        font-family: var(--input-font-family, var(--font-family--secondary));
+      }
+    }
   }
   @include for-mobile {
     &__radio-group {
