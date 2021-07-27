@@ -265,7 +265,7 @@ export default {
   &__characteristic {
     --characteristic-description-font-size: var(--font-xs);
     margin: 0 0 var(--spacer-sm) var(--spacer-2xs);
-    color: var(--c-sunset-primary);
+    color: var(--c-highlight);
   }
   @include for-desktop {
     margin: 0;
