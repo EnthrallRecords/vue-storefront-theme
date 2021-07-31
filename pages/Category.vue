@@ -28,31 +28,6 @@
             </button>
           </template>
         </div>
-        <div class="navbar__sort">
-          <span class="navbar__label desktop-only">{{ $t("Sort By") }}:</span>
-          <SfSelect
-            class="navbar__select sort-by"
-            ref="SortBy"
-            :selected="sortOrder"
-            @change="changeSortOder"
-          >
-            <SfSelectOption
-              v-for="option in sortOptions"
-              :key="option.id"
-              :value="option.id"
-              class="sort-by__option"
-            >
-              {{ option.label }}
-            </SfSelectOption>
-          </SfSelect>
-          <SfButton
-            class="sf-button--text navbar__filters-button sort-by__button smartphone-only"
-            @click="$refs.SortBy.toggle()"
-          >
-            {{ $t('Sort By') }}
-            <ASortIcon />
-          </SfButton>
-        </div>
         <div class="navbar__counter">
           <span class="navbar__label desktop-only">
             {{ $t("Products found") }}:
