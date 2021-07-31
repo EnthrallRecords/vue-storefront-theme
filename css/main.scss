@@ -13,7 +13,9 @@
     --bg-primary: #3f4444;
     background-color: var(--bg-primary);
     --header-background: var(--bg-primary);
+    --bar-background: var(--bg-primary);
     --sidebar-background: var(--bg-primary);
+    --bottom-navigation-background: var(--bg-primary);
     --modal-background: var(--bg-primary);
     --mega-menu-background: var(--bg-primary);
     --product-card-background: var(--bg-primary);
@@ -34,6 +36,11 @@
     --c-link-hover: var(--c-black);
     --input-label-color: var(--c-text);
     --radio-label-color: var(--c-text);
+
+    .sf-bar {
+      color: var(--_c-sunset-primary);
+    }
+    --icon-color: var(--_c-sunset-primary);
 
     /* Brand colors */
     // Primary

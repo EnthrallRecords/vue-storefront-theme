@@ -7,6 +7,7 @@
       <SfMegaMenuColumn
         v-for="category in categories"
         :key="category.id"
+        :title="category.name"
       >
         <SfList>
           <SfListItem
@@ -119,6 +120,15 @@ export default {
   }
   .sf-mega-menu {
     --mega-menu-content-padding: 0;
+    ::v-deep {
+      .sf-mega-menu-column__header {
+        .sf-menu-item__label {
+          @include for-desktop {
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
 .aside-menu {
