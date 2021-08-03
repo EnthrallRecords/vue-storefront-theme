@@ -1,9 +1,5 @@
 <template>
-  <div class="o-product-details product" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-    <meta itemprop="priceCurrency" :content="$store.state.storeView.i18n.currencyCode">
-    <meta itemprop="price" :content="parseFloat(product.price_incl_tax).toFixed(2)">
-    <meta itemprop="availability" :content="availability">
-    <meta itemprop="url" :content="product.url_path">
+  <div class="o-product-details product">
     <MProductGallery
       :gallery="gallery"
       :configuration="productConfiguration"

@@ -1,5 +1,6 @@
 <template>
-  <div id="product" itemscope itemtype="http://schema.org/Product">
+  <div id="product">
+    <script v-html="getJsonLd" type="application/ld+json" />
     <SfBreadcrumbs class="breadcrumbs desktop-only" :breadcrumbs="breadcrumbs">
       <template #link="{breadcrumb}">
         <router-link :to="breadcrumb.route.link" class="sf-breadcrumbs__breadcrumb">
@@ -42,7 +43,7 @@ import {
 import { htmlDecode } from '@vue-storefront/core/filters';
 import { ReviewModule } from '@vue-storefront/core/modules/review';
 import { registerModule } from '@vue-storefront/core/lib/modules';
-import { onlineHelper, isServer } from '@vue-storefront/core/helpers';
+import { onlineHelper, isServer, productJsonLd } from '@vue-storefront/core/helpers';
 import { catalogHooksExecutors } from '@vue-storefront/core/modules/catalog-next/hooks';
 import MRelatedProducts from 'theme/components/molecules/m-related-products';
 import OProductDetails from 'theme/components/organisms/o-product-details';
@@ -121,6 +122,9 @@ export default {
         .sort((a, b) => {
           return a.attribute_id > b.attribute_id;
         });
+    },
+    getJsonLd () {
+      return productJsonLd(this.getCurrentProduct, this.getCurrentProductConfiguration.color, this.$store.state.storeView.i18n.currencyCode, this.getCustomAttributes)
     },
     banners () {
       return checkWebpSupport(this.promotedOffers.productBanners, this.isWebpSupported)
