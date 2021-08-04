@@ -226,6 +226,9 @@
       </div>
       <MPriceSummary class="totals__element" />
     </div>
+    <div class="payment">
+      <braintree-dropin v-if="paymentMethod === 'Braintree'"/>
+    </div>
     <div class="actions">
       <SfButton
         class="sf-button--full-width actions__button"
@@ -266,6 +269,7 @@ import MPriceSummary from 'theme/components/molecules/m-price-summary';
 import APromoCode from 'theme/components/atoms/a-promo-code';
 import { ModalList } from 'theme/store/ui/modals'
 import { createSmoothscroll } from 'theme/helpers';
+import BraintreeDropin from 'src/modules/payment-braintree/components/Dropin'
 
 export default {
   name: 'OConfirmOrder',
@@ -281,7 +285,8 @@ export default {
     SfCharacteristic,
     SfCollectedProduct,
     APromoCode,
-    MPriceSummary
+    MPriceSummary,
+    BraintreeDropin
   },
   mixins: [OrderReview],
   data () {
