@@ -1,7 +1,7 @@
 <template>
   <div class="o-personal-details">
     <div v-if="!currentUser" class="log-in desktop-only">
-      <SfButton class="log-in__button color-secondary" @click="login">
+      <SfButton class="log-in__button" @click="login">
         {{ $t('Log in to your account') }}
       </SfButton>
       <p class="log-in__info">
