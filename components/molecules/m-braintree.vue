@@ -22,6 +22,10 @@ export default {
     this.configureBraintree()
   },
   computed: {
+    paymentDetails () {
+      let paymentDetails = this.$store.getters['checkout/getPaymentDetails']
+      return paymentDetails
+    },
     grandTotal () {
       let cartTotals = this.$store.getters['cart/getTotals']
       return cartTotals.find(seg => seg.code === 'grand_total').value
@@ -37,6 +41,15 @@ export default {
         dropin.create({
           authorization: resp,
           container: '#braintree',
+          card: {
+            overrides: {
+              fields: {
+                postalCode: {
+                  prefill: this.paymentDetails.zipCode
+                }
+              }
+            }
+          },
           paypal: {
             flow: 'checkout',
             amount: this.getTransactions().amount.total,
