@@ -49,7 +49,7 @@
     </p>
     <div class="review__header">
       <h3 class="review__title">
-        {{ $t("Payment") }}
+        {{ $t("Billing") }}
       </h3>
       <SfButton
         class="sf-button--text color-secondary"
@@ -67,20 +67,6 @@
     </p>
     <p class="content">
       {{ paymentDetails.phoneNumber }}
-    </p>
-    <div class="review__header">
-      <h3 class="review__title">
-        {{ $t("Payment method") }}
-      </h3>
-      <SfButton
-        class="sf-button--text color-secondary"
-        @click="$bus.$emit('checkout-before-edit', 'payment')"
-      >
-        {{ $t("Edit") }}
-      </SfButton>
-    </div>
-    <p class="content">
-      {{ paymentMethod }}
     </p>
     <div class="characteristics">
       <SfCharacteristic

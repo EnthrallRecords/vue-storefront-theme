@@ -52,6 +52,7 @@
         class="form__element"
         name="apartment-number"
         :label="$t('Address line 2')"
+        :valid="!$v.shipping.apartmentNumber.$error"
         @blur="$v.shipping.apartmentNumber.$touch()"
       />
       <SfInput
@@ -201,7 +202,6 @@ export default {
         unicodeAlphaNum
       },
       apartmentNumber: {
-        unicodeAlphaNum
       },
       zipCode: {
         required,

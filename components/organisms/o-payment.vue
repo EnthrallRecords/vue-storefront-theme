@@ -13,12 +13,6 @@
         name="sendToShippingAddress"
         :label="$t('Copy address data from shipping')"
       />
-      <SfCheckbox
-        v-model="sendToBillingAddress"
-        class="form__element form__checkbox"
-        name="sendToBillingAddress"
-        :label="$t('Use my billing data')"
-      />
       <SfInput
         v-model.trim="payment.firstName"
         class="form__element form__element--half"
@@ -58,6 +52,7 @@
         class="form__element"
         name="apartment-number"
         :label="$t('Address line 2')"
+        :valid="!$v.payment.apartmentNumber.$error"
         @blur="$v.payment.apartmentNumber.$touch()"
       />
       <SfInput
@@ -185,7 +180,6 @@ export default {
         unicodeAlphaNum
       },
       apartmentNumber: {
-        unicodeAlphaNum
       },
       zipCode: {
         required,

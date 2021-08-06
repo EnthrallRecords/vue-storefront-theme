@@ -73,7 +73,7 @@ export default {
     { rel: 'manifest', href: '/assets/manifest.json' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com/', crossorigin: 'anonymous' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com/', crossorigin: 'anonymous' },
-    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Bitter:wght@100&family=Raleway+Dots&display=swap' },
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Special+Elite&family=Bitter:wght@100&family=Raleway+Dots&display=swap' },
     { rel: 'preconnect', href: 'https://cdn.jsdelivr.net/', crossorigin: 'anonymous' }
   ],
   script: [
