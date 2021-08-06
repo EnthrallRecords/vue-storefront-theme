@@ -72,21 +72,6 @@
           </SfButton>
         </div>
       </SfAccordionItem>
-      <SfAccordionItem :header="$t('Payment method')">
-        <div class="accordion__item">
-          <div class="accordion__content">
-            <p class="content">
-              {{ paymentMethod }}
-            </p>
-          </div>
-          <SfButton
-            class="sf-button--text color-secondary accordion__edit"
-            @click="$bus.$emit('checkout-before-edit', 'payment')"
-          >
-            {{ $t("Edit") }}
-          </SfButton>
-        </div>
-      </SfAccordionItem>
       <SfAccordionItem :header="$t('Order details')">
         <div class="accordion__item">
           <transition name="fade">
@@ -231,7 +216,7 @@
     </div>
     <div class="actions">
       <SfButton
-        class="sf-button--full-width actions__button"
+        class="sf-button--full-width actions__button braintree-place-order-btn"
         :disabled="$v.orderReview.$invalid || !productsInCart.length"
         @click="placeOrder"
       >
@@ -241,7 +226,7 @@
         class="sf-button--full-width sf-button--text color-secondary actions__button actions__button--secondary"
         @click="$bus.$emit('checkout-before-edit', 'payment')"
       >
-        {{ $t("Edit payment") }}
+        {{ $t("Edit billing") }}
       </SfButton>
     </div>
   </div>
@@ -269,7 +254,7 @@ import MPriceSummary from 'theme/components/molecules/m-price-summary';
 import APromoCode from 'theme/components/atoms/a-promo-code';
 import { ModalList } from 'theme/store/ui/modals'
 import { createSmoothscroll } from 'theme/helpers';
-import BraintreeDropin from 'src/modules/payment-braintree/components/Dropin'
+import BraintreeDropin from 'theme/components/molecules/m-braintree'
 
 export default {
   name: 'OConfirmOrder',
