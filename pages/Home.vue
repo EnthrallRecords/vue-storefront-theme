@@ -151,5 +151,8 @@ export default {
   @include for-desktop {
     margin: var(--spacer-2xl) 0;
   }
+  a:hover {
+    color: var(--c-link);
+  }
 }
 </style>
