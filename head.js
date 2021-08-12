@@ -17,7 +17,7 @@ export default {
       content: 'width=device-width, initial-scale=1, minimal-ui'
     },
     { name: 'robots', content: 'index, follow' },
-    { name: 'mobile-web-app-capable', content: 'yes' },
+    { name: 'mobile-web-app-capable', content: 'no' },
     { name: 'theme-color', content: '#f38f04' },
     { name: 'apple-mobile-web-app-status-bar-style', content: '#f38f04' }
   ],
@@ -70,6 +70,7 @@ export default {
       href: '/assets/apple_splash_640.png',
       sizes: '640x1136'
     },
+    { rel: 'manifest', href: '/assets/manifest.json' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com/', crossorigin: 'anonymous' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com/', crossorigin: 'anonymous' },
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Special+Elite&family=Bitter:wght@100&family=Raleway+Dots&display=swap' },
