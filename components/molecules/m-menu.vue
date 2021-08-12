@@ -86,11 +86,14 @@ export default {
             position: 0
           });
 
-          return {
-            ...prepareCategoryMenuItem(category),
-            items: [viewAllMenuItem, ...subCategories]
+          if (typeof category !== 'undefined') {
+            return {
+              ...prepareCategoryMenuItem(category),
+              items: [viewAllMenuItem, ...subCategories]
+            };
           };
         })
+        .filter(Boolean)
         .sort((a, b) => a.position - b.position);
     },
     currentCategoryTitle () {
