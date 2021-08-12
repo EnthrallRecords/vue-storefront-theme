@@ -23,12 +23,12 @@
       <SfFooterColumn :title="$t('Info')">
         <SfList>
           <SfListItem>
-            <router-link to="https://www.enthrallrecords.com/privacy-policy/" exact>
+            <a href="https://www.enthrallrecords.com/privacy-policy/">
               <SfMenuItem
                 class="sf-footer__menu-item"
                 :label="$t('Privacy policy')"
               />
-            </router-link>
+            </a>
           </SfListItem>
           <SfListItem v-if="multistoreEnabled">
             <SfMenuItem

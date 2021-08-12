@@ -70,7 +70,6 @@ export default {
       href: '/assets/apple_splash_640.png',
       sizes: '640x1136'
     },
-    { rel: 'manifest', href: '/assets/manifest.json' },
     { rel: 'preconnect', href: 'https://fonts.googleapis.com/', crossorigin: 'anonymous' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com/', crossorigin: 'anonymous' },
     { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Special+Elite&family=Bitter:wght@100&family=Raleway+Dots&display=swap' },
