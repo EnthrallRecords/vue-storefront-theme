@@ -16,7 +16,7 @@
       <template #logo>
         <ALogo />
       </template>
-      <template #navigation>
+      <template #navigation v-if="!isMobileHeader()">
         <SfHeaderNavigationItem
           v-for="category in categories"
           :key="category.id"
@@ -24,18 +24,20 @@
           @mouseleave="isHoveredMenu = false"
           @click="isHoveredMenu = false"
         >
-          <router-link
-            :class="{active: isCategoryActive(category)}"
-            :to="categoryLink(category)"
-          >
-            {{ category.name }}
-          </router-link>
-          <MMenu
-            :visible="isHoveredMenu && !isSearchPanelVisible"
-            :categories-ids="category.children_data"
-            :title="category.name"
-            @close="isHoveredMenu = false"
-          />
+          <template #desktop-navigation-item>
+            <router-link
+              :class="{active: isCategoryActive(category)}"
+              :to="categoryLink(category)"
+            >
+              {{ category.name }}
+            </router-link>
+            <MMenu
+              :visible="isHoveredMenu && !isSearchPanelVisible"
+              :categories-ids="category.children_data"
+              :title="category.name"
+              @close="isHoveredMenu = false"
+            />
+          </template>
         </SfHeaderNavigationItem>
       </template>
       <template #search>
@@ -108,12 +110,20 @@ export default {
       return getTopLevelCategories(this.getCategories);
     }
   },
+  serverPrefetch () {
+    return this.isMobileHeader();
+  },
   methods: {
     categoryLink (category) {
       return formatCategoryLink(category);
     },
     isCategoryActive (category) {
       return this.getCurrentCategory.path ? this.getCurrentCategory.path.startsWith(category.path) : false;
+    },
+    isMobileHeader () {
+      if (this.$device != undefined) {
+        return this.$device.isMobile
+      }
     }
   },
   watch: {
