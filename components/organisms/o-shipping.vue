@@ -84,6 +84,7 @@
             : $t('Name must have at least 3 letters.')
         "
         @blur="$v.shipping.zipCode.$touch()"
+        @input="changeCountry"
       />
       <SfSelect
         v-model="shipping.country"
