@@ -10,6 +10,7 @@ import { UserModule } from '@vue-storefront/core/modules/user'
 import { CmsModule } from '@vue-storefront/core/modules/cms'
 import { NewsletterModule } from '@vue-storefront/core/modules/newsletter'
 import { PaymentBackendMethodsModule } from 'src/modules/payment-backend-methods'
+import { GoogleTagManagerModule } from 'src/modules/google-tag-manager'
 import { DeviceModule } from 'src/modules/device'
 import { Braintree } from 'src/modules/payment-braintree'
 
@@ -28,6 +29,7 @@ export function registerClientModules () {
   registerModule(BreadcrumbsModule)
   registerModule(CmsModule)
   registerModule(NewsletterModule)
+  registerModule(GoogleTagManagerModule)
   registerModule(DeviceModule)
   registerModule(Braintree)
 }
