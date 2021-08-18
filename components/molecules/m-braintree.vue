@@ -60,7 +60,7 @@ export default {
             merchantId: config.braintree.googleMerchantId,
             transactionInfo: {
               totalPriceStatus: 'FINAL',
-              totalPrice: this.getTransactions().amount.total,
+              totalPrice: String(this.getTransactions().amount.total),
               currencyCode: this.getTransactions().amount.currency
             },
             allowedPaymentMethods: [{
@@ -78,7 +78,7 @@ export default {
             paymentRequest: {
               total: {
                 label: config.braintree.displayName,
-                amount: this.getTransactions().amount.total
+                amount: String(this.getTransactions().amount.total)
               },
               requiredBillingContactFields: ["postalAddress"]
             }
