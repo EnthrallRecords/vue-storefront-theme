@@ -1,6 +1,5 @@
 <template>
   <div id="product">
-    <script v-html="getJsonLd" type="application/ld+json" />
     <SfBreadcrumbs class="breadcrumbs desktop-only" :breadcrumbs="breadcrumbs">
       <template #link="{breadcrumb}">
         <router-link :to="breadcrumb.route.link" class="sf-breadcrumbs__breadcrumb">
@@ -30,6 +29,7 @@
         </SfSection>
       </lazy-hydrate>
     </div>
+    <script v-html="getJsonLd" type="application/ld+json" />
   </div>
 </template>
 
@@ -124,7 +124,9 @@ export default {
         });
     },
     getJsonLd () {
-      return productJsonLd(this.getCurrentProduct, this.getCurrentProductConfiguration.color, this.$store.state.storeView.i18n.currencyCode, this.getCustomAttributes)
+      let currentProduct = this.getCurrentProduct
+      currentProduct.is_in_stock = true // force in stock availability, productJsonLd looks at the wrong attribute
+      return JSON.stringify(productJsonLd(currentProduct, this.getCurrentProductConfiguration.color, this.$store.state.storeView.i18n.currencyCode, this.getCustomAttributes))
     },
     banners () {
       return checkWebpSupport(this.promotedOffers.productBanners, this.isWebpSupported)
